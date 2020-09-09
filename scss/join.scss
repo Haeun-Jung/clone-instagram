@@ -1,0 +1,198 @@
+* {
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    width: 100%;
+    height: 95%;
+    background-color: #fafafa;
+}
+
+div.header {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    div.wrapper {
+        display: flex;
+        width: 360px;
+        height: 500px;
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+        padding: 10px 0px;
+
+        img {
+            margin: 15px 0px;
+        }
+
+        span {
+            font-size: 18px;
+            font-family: 'nsM';
+
+            color: #8e8e8e;
+            background-color: #ffffff;
+        }
+
+        div {
+            button.facebook {
+                width: 280px;
+                height: 30px;
+                font-size: 12px;
+                font-family: 'nsM';
+                color: #ffffff;
+                background-color: #2e9afe;
+                border-color: #2e9afe;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+        }
+
+        p.line {
+            font-size: 14px;
+            color: #8e8e8e;
+            margin: 8px 0px;
+        }
+
+        div.input {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 6px 0px;
+
+            input {
+                width: 280px;
+                height: 34px;
+                color: #8e8e8e;
+                background-color: #fafafa;
+                border: #dbdbdb 1px solid;
+                border-radius: 4px;
+                box-sizing: border-box;
+                margin: 2px 0px;
+                padding: 0px 8px;
+                cursor: pointer;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    font-size: 10px;
+                }
+            }
+        }
+
+        button.join {
+            width: 280px;
+            height: 30px;
+            font-size: 14px;
+            font-family: 'nsM';
+            color: #ffffff;
+            background-color: #2e9afe;
+            border-color: #2e9afe;
+            border-radius: 4px;
+            margin: 10px 0px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        p.agree {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            color: #8e8e8e;
+            margin: 10px 0px;
+        }
+    }
+    div.login {
+        display: flex;
+        width: 360px;
+        height: 50px;
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+        padding: 10px 0px;
+
+        span {
+            font-family: 'nsM';
+            color: #2e9afe;
+            margin-left: 4px;
+            cursor: pointer;
+        }
+    }
+
+    div.download {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 0px;
+
+        span {
+            font-size: 14px;
+        }
+
+        div {
+            margin-top: 16px;
+
+            img {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+div.footer {
+    display: flex;
+    position: fixed;
+    bottom: 20px;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+
+    div {
+        font-size: 12px;
+        font-family: 'nsM';
+        color: #0b2161;
+        margin-bottom: 10px;
+
+        span {
+            cursor: pointer;
+        }
+    }
+
+    div.copyright {
+        font-size: 12px;
+        color: #e6e6e6;
+        margin-top: 5px;
+    }
+}
+
+@font-face {
+    font-family: 'nsB';
+    src: url('../font/NotoSansKR-Bold.otf');
+}
+
+@font-face {
+    font-family: 'nsM';
+    src: url('../font/NotoSansKR-Medium.otf');
+}
+
+@font-face {
+    font-family: 'nsL';
+    src: url('../font/NotoSansKR-Light.otf');
+}
