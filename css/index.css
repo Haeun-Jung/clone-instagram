@@ -335,6 +335,7 @@ div.modal-story {
   justify-content: center; }
   div.modal-story div.header {
     display: flex;
+    position: relative;
     width: 466px;
     justify-content: flex-start;
     padding-top: 26px; }
@@ -344,9 +345,25 @@ div.modal-story {
       border-radius: 17px; }
     div.modal-story div.header p.text {
       font-size: 14px;
-      font-family: 'nsM';
+      font-family: 'nsL';
       color: #ffffff;
+      margin-top: -22px;
       margin-left: 14px; }
+    div.modal-story div.header p.time {
+      font-size: 14px;
+      font-family: 'nsL';
+      color: #b6b3b3;
+      margin-top: -22px;
+      margin-left: 10px; }
+    div.modal-story div.header p.user {
+      position: absolute;
+      left: 48px;
+      top: 52px;
+      font-size: 11px;
+      font-family: 'nsL';
+      color: #ffffff; }
+    div.modal-story div.header span.declaration {
+      color: #ffffff; }
   div.modal-story div.header-line {
     width: 466px;
     height: 1px;
