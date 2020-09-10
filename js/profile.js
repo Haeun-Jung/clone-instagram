@@ -161,4 +161,6 @@ document.querySelector('span.close').addEventListener('click', function (e) {
     }
     console.log(e.target);
     document.querySelector('div.modal-story').style.display = 'none';
+    document.querySelector('div.user-profile>img').style.borderColor =
+        '#e8e8e8';
 });
