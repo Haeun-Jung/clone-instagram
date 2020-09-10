@@ -164,3 +164,17 @@ document.querySelector('span.close').addEventListener('click', function (e) {
     document.querySelector('div.user-profile>img').style.borderColor =
         '#e8e8e8';
 });
+
+// 프로필 setting
+function setting() {
+    document.querySelector('div.setting').style.display = 'flex';
+}
+
+// 프로필 setting 부분에서 다른부분을 눌렀을 시에 setting 화면 가리기
+document.querySelector('div.setting').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.setting').style.display = 'none';
+});
