@@ -118,21 +118,31 @@ div.header {
 div.footer {
   display: flex;
   position: fixed;
-  bottom: 20px;
   width: 100%;
+  bottom: 0px;
+  background-color: #fafafa;
   flex-direction: column;
   align-items: center; }
-  div.footer div {
-    font-size: 12px;
-    font-family: 'nsM';
-    color: #0b2161;
-    margin-bottom: 10px; }
-    div.footer div span {
-      cursor: pointer; }
-  div.footer div.copyright {
-    font-size: 12px;
-    color: #e6e6e6;
-    margin-top: 5px; }
+  div.footer div.wrapper {
+    width: 1012px;
+    height: 25px;
+    padding: 38px 0px; }
+    div.footer div.wrapper div {
+      display: flex;
+      font-size: 12px;
+      font-family: 'nsM';
+      color: #00376b;
+      margin-right: 16px;
+      margin-bottom: 3px; }
+      div.footer div.wrapper div span {
+        display: inline-block;
+        margin-bottom: 7px;
+        margin-right: 16px;
+        cursor: pointer; }
+      div.footer div.wrapper div p.copyright {
+        right: 0;
+        font-size: 12px;
+        color: #8e8e8e; }
 
 @font-face {
   font-family: 'nsB';

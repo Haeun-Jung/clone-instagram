@@ -348,7 +348,7 @@ div.footer {
         div {
             display: flex;
             font-size: 12px;
-            font-weight: bold;
+            font-family: 'nsM';
             color: #00376b;
             margin-right: 16px;
             margin-bottom: 3px;
@@ -367,4 +367,19 @@ div.footer {
             }
         }
     }
+}
+
+@font-face {
+    font-family: 'nsB';
+    src: url('../font/NotoSansKR-Bold.otf');
+}
+
+@font-face {
+    font-family: 'nsM';
+    src: url('../font/NotoSansKR-Medium.otf');
+}
+
+@font-face {
+    font-family: 'nsL';
+    src: url('../font/NotoSansKR-Light.otf');
 }
