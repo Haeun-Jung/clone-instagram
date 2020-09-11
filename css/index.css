@@ -189,6 +189,7 @@ div.modal-post {
   justify-content: center; }
   div.modal-post div.wrapper {
     display: flex;
+    position: relative;
     width: 935px;
     height: 600px;
     background-color: #ffffff;
@@ -323,6 +324,14 @@ div.modal-post {
             color: #0096f6;
             background-color: transparent;
             opacity: 0.3; }
+    div.modal-post div.wrapper span.close {
+      position: absolute;
+      top: -4px;
+      right: -30px;
+      font-size: 24px;
+      font-family: 'nsM';
+      color: #ffffff;
+      cursor: pointer; }
 
 div.modal-story {
   display: none;

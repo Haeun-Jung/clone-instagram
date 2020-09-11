@@ -247,6 +247,7 @@ div.modal-post {
 
     div.wrapper {
         display: flex;
+        position: relative;
         width: 935px;
         height: 600px;
         background-color: #ffffff;
@@ -438,6 +439,16 @@ div.modal-post {
                     }
                 }
             }
+        }
+
+        span.close {
+            position: absolute;
+            top: -4px;
+            right: -30px;
+            font-size: 24px;
+            font-family: 'nsM';
+            color: #ffffff;
+            cursor: pointer;
         }
     }
 }
