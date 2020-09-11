@@ -176,3 +176,25 @@ document.getElementById('url[i]').onclick = function () {
     location.href = 'post.html';
 };
 */
+
+function follow() {
+    var count = 1;
+
+    if (count == 1) {
+        document.querySelector('button.follow').textContent = '팔로잉';
+        document.querySelector('button.follow').style.color = '#262626';
+        document.querySelector('button.follow').style.backgroundColor =
+            '#fafafa';
+        document.querySelector('button.follow').style.borderColor = '#e6e6e6';
+        count == 0;
+    } else {
+        document.querySelector('button.follow').textContent = '팔로우';
+        document.querySelector('button.follow').style.color = '#ffffff';
+        document.querySelector('button.follow').style.backgroundColor =
+            'rgba(var(--d69, 0, 149, 246), 1)';
+        ('#fafafa');
+        document.querySelector('button.follow').style.borderColor =
+            'transparent';
+        count == 1;
+    }
+}

@@ -314,13 +314,13 @@ div.setting {
       border-top: 1px solid #dbdbdb;
       padding: 4px 8px;
       cursor: pointer; }
-    div.setting div.wrapper button:nth-child(1) {
-      border-top: none;
-      border-top-left-radius: 20px;
-      border-top-right-radius: 12px; }
-    div.setting div.wrapper button:nth-child(10) {
-      border-bottom-left-radius: 12px;
-      border-bottom-right-radius: 12px; }
+      div.setting div.wrapper button:nth-child(1) {
+        border-top: none;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px; }
+      div.setting div.wrapper button:nth-child(10) {
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px; }
 
 @font-face {
   font-family: 'nsB';
