@@ -31,7 +31,7 @@ div.header {
         margin-bottom: 20px;
         padding: 10px 0px;
 
-        img {
+        img.logo {
             margin: 15px 0px;
         }
 
@@ -45,6 +45,15 @@ div.header {
 
         div {
             button.facebook {
+                img {
+                    position: absolute;
+                    width: 16px;
+                    height: 16px;
+                    top: 7px;
+                    left: 62px;
+                }
+
+                position: relative;
                 width: 280px;
                 height: 30px;
                 font-size: 12px;

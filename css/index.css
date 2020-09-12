@@ -32,18 +32,27 @@ div.header {
     box-sizing: border-box;
     align-items: center;
     justify-content: center; }
-    div.header div.wrapper img {
+    div.header div.wrapper img.logo {
       cursor: pointer; }
-    div.header div.wrapper input.search {
-      width: 200px;
-      height: 26px;
-      font-family: 'nsL';
-      text-align: center;
-      background-color: #fafafa;
-      border: 1px solid #e6e6e6;
-      border-radius: 4px; }
-      div.header div.wrapper input.search:focus {
-        outline: none; }
+    div.header div.wrapper div {
+      position: relative; }
+      div.header div.wrapper div input.search {
+        width: 200px;
+        height: 26px;
+        font-family: 'nsL';
+        text-align: center;
+        background-color: #fafafa;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px; }
+        div.header div.wrapper div input.search:focus {
+          outline: none; }
+      div.header div.wrapper div img.search-icon {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        left: 68px;
+        top: 8px;
+        color: #e6e6e6; }
     div.header div.wrapper button.login {
       width: 60px;
       height: 30px;

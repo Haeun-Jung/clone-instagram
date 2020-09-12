@@ -30,7 +30,7 @@ div.header {
         margin-bottom: 20px;
         padding: 10px 0px;
 
-        img {
+        img.logo {
             margin: 15px 0px;
             padding-bottom: 8px;
         }
@@ -80,6 +80,14 @@ div.header {
 
         div {
             display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img#facebook {
+                width: 18px;
+                height: 18px;
+                margin-right: 6px;
+            }
 
             p {
                 font-size: 14px;

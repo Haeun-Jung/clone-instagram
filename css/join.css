@@ -27,7 +27,7 @@ div.header {
     align-items: center;
     margin-bottom: 20px;
     padding: 10px 0px; }
-    div.header div.wrapper img {
+    div.header div.wrapper img.logo {
       margin: 15px 0px; }
     div.header div.wrapper span {
       font-size: 18px;
@@ -35,6 +35,7 @@ div.header {
       color: #8e8e8e;
       background-color: #ffffff; }
     div.header div.wrapper div button.facebook {
+      position: relative;
       width: 280px;
       height: 30px;
       font-size: 12px;
@@ -44,6 +45,12 @@ div.header {
       border-color: #2e9afe;
       border-radius: 4px;
       cursor: pointer; }
+      div.header div.wrapper div button.facebook img {
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 7px;
+        left: 62px; }
     div.header div.wrapper p.line {
       font-size: 14px;
       color: #8e8e8e;
