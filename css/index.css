@@ -48,11 +48,12 @@ div.header {
           outline: none; }
       div.header div.wrapper div img.search-icon {
         position: absolute;
-        width: 14px;
-        height: 14px;
+        width: 12px;
+        height: 12px;
         left: 68px;
         top: 8px;
-        color: #e6e6e6; }
+        -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
+        filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6); }
     div.header div.wrapper button.login {
       width: 60px;
       height: 30px;
@@ -225,11 +226,13 @@ div.modal-post {
         div.modal-post div.wrapper div.post-content div.user img {
           width: 40px;
           height: 40px;
-          border-radius: 20px; }
+          border-radius: 20px;
+          cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.user a {
           font-size: 12px;
           font-family: 'nsM';
-          padding: 0px 14px; }
+          padding: 0px 14px;
+          cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.user span {
           font-size: 12px;
           font-family: 'nsM'; }
@@ -237,44 +240,127 @@ div.modal-post {
           color: #2e9afe;
           font-size: 14px;
           font-family: 'nsM';
-          background-color: transparent; }
+          background-color: transparent;
+          cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.user a.etc {
           right: 0;
-          font-family: 'nsM'; }
+          font-family: 'nsB';
+          cursor: pointer; }
       div.modal-post div.wrapper div.post-content div.rest {
         display: flex;
         width: 100%;
-        flex: 1;
+        height: 525px;
         flex-direction: column; }
         div.modal-post div.wrapper div.post-content div.rest div.text {
           width: 100%;
-          flex: 1;
+          height: calc(100%-32px);
           box-sizing: border-box;
+          overflow-y: scroll;
           padding: 20px; }
-          div.modal-post div.wrapper div.post-content div.rest div.text div.top {
+          div.modal-post div.wrapper div.post-content div.rest div.text::-webkit-scrollbar {
+            display: none; }
+          div.modal-post div.wrapper div.post-content div.rest div.text div.top,
+          div.modal-post div.wrapper div.post-content div.rest div.text div.center,
+          div.modal-post div.wrapper div.post-content div.rest div.text div.bottom {
             display: flex;
-            width: 100%; }
-            div.modal-post div.wrapper div.post-content div.rest div.text div.top img {
+            width: 100%;
+            margin-bottom: 20px; }
+            div.modal-post div.wrapper div.post-content div.rest div.text div.top img,
+            div.modal-post div.wrapper div.post-content div.rest div.text div.center img,
+            div.modal-post div.wrapper div.post-content div.rest div.text div.bottom img {
               width: 40px;
               height: 40px;
               border-radius: 20px;
-              margin-right: 12px; }
-            div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting {
+              margin-right: 12px;
+              cursor: pointer; }
+            div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting,
+            div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting,
+            div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting {
+              position: relative;
               flex: 1; }
-              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div a.id {
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div a.id,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div a.id,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div a.id {
                 font-size: 12px;
-                font-family: 'nsM'; }
-              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div p {
+                font-family: 'nsM';
+                cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div p,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div p,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div p {
                 font-size: 14px;
                 font-family: 'nsL'; }
-              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div a.tag {
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div a.tag,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div a.tag,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div a.tag {
                 font-size: 14px;
                 font-family: 'nsL';
-                color: #00376b; }
-              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting p.time {
+                color: #00376b;
+                cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting p.time,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting p.time,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting p.time {
                 font-size: 12px;
                 color: #dbdbdb;
-                margin: 16px 0px 4px 0px; }
+                margin: 10px 0px 4px 0px;
+                cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div.info,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div.info,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div.info {
+                display: flex; }
+                div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div.info p.time,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div.info p.time,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div.info p.time {
+                  font-size: 13px;
+                  font-family: 'nsM';
+                  color: #dbdbdb;
+                  margin: 10px 10px 4px 0px;
+                  cursor: pointer; }
+                div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div.info p.like,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div.info p.like,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div.info p.like {
+                  font-size: 13px;
+                  font-family: 'nsM';
+                  color: #8e8e8e;
+                  margin: 10px 10px 4px 0px;
+                  cursor: pointer; }
+                div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting div.info p.reply,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting div.info p.reply,
+                div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting div.info p.reply {
+                  font-size: 13px;
+                  font-family: 'nsM';
+                  color: #8e8e8e;
+                  margin: 10px 0px 4px 0px;
+                  cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting p.see-reply,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting p.see-reply,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting p.see-reply {
+                font-size: 13px;
+                font-family: 'nsM';
+                color: #8e8e8e;
+                margin: 10px 0px 4px 0px;
+                cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting a.option,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting a.option,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting a.option {
+                display: none;
+                position: absolute;
+                width: 16px;
+                height: 16px;
+                top: 18px;
+                right: 38px;
+                font-family: 'nsB';
+                color: #8e8e8e;
+                cursor: pointer; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting svg.heart,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting svg.heart,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting svg.heart {
+                position: absolute;
+                width: 12px;
+                height: 12px;
+                top: 30px;
+                right: 10px;
+                color: #262626;
+                cursor: pointer; }
           div.modal-post div.wrapper div.post-content div.rest div.text div.center {
             flex: 1; }
         div.modal-post div.wrapper div.post-content div.rest div.buttons {
@@ -315,7 +401,7 @@ div.modal-post {
           padding-left: 16px;
           padding-right: 16px; }
           div.modal-post div.wrapper div.post-content div.rest div.comment-wrapper textarea {
-            height: 60px;
+            height: 44px;
             flex: 1;
             font-size: 14px;
             font-family: 'nsM';
@@ -324,7 +410,7 @@ div.modal-post {
             overflow: hidden;
             box-sizing: border-box;
             margin-right: 10px;
-            padding-top: 20px; }
+            padding-top: 10px; }
             div.modal-post div.wrapper div.post-content div.rest div.comment-wrapper textarea:focus {
               outline: none; }
           div.modal-post div.wrapper div.post-content div.rest div.comment-wrapper button.submit {
@@ -332,15 +418,106 @@ div.modal-post {
             font-family: 'nsM';
             color: #0096f6;
             background-color: transparent;
-            opacity: 0.3; }
-    div.modal-post div.wrapper span.close {
+            opacity: 0.3;
+            margin-top: -4px; }
+    div.modal-post div.wrapper a.previous {
       position: absolute;
-      top: -4px;
-      right: -30px;
+      top: 290px;
+      left: -30px;
       font-size: 24px;
-      font-family: 'nsM';
+      font-family: 'nsB';
       color: #ffffff;
       cursor: pointer; }
+    div.modal-post div.wrapper a.next {
+      position: absolute;
+      top: 290px;
+      right: -30px;
+      font-size: 24px;
+      font-family: 'nsB';
+      color: #ffffff;
+      cursor: pointer; }
+  div.modal-post span.post-close {
+    position: absolute;
+    top: -4px;
+    right: -30px;
+    font-size: 24px;
+    font-family: 'nsM';
+    color: #ffffff;
+    cursor: pointer; }
+
+div.post-menu {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; }
+  div.post-menu div.wrapper {
+    display: flex;
+    width: 400px;
+    max-height: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center; }
+    div.post-menu div.wrapper button {
+      width: 100%;
+      min-height: 48px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.5px;
+      background-color: transparent;
+      border-top: 1px solid #dbdbdb;
+      padding: 4px 8px;
+      cursor: pointer; }
+      div.post-menu div.wrapper button:focus {
+        outline: none; }
+      div.post-menu div.wrapper button:nth-child(1) {
+        color: #ed4956;
+        border-top: none; }
+
+div.comment-report,
+div.story-report {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  cursor: pointer; }
+  div.comment-report div.wrapper,
+  div.story-report div.wrapper {
+    display: flex;
+    width: 400px;
+    max-height: 100%;
+    background-color: #ffffff;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center; }
+    div.comment-report div.wrapper button,
+    div.story-report div.wrapper button {
+      width: 100%;
+      min-height: 48px;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.5px;
+      background-color: transparent;
+      border-top: 1px solid #dbdbdb;
+      padding: 4px 8px;
+      cursor: pointer; }
+      div.comment-report div.wrapper button:focus,
+      div.story-report div.wrapper button:focus {
+        outline: none; }
+      div.comment-report div.wrapper button:nth-child(1),
+      div.story-report div.wrapper button:nth-child(1) {
+        border-top: none; }
+      div.comment-report div.wrapper button.comment-menu,
+      div.story-report div.wrapper button.comment-menu {
+        color: #ed4956; }
 
 div.modal-story {
   display: none;
@@ -360,13 +537,15 @@ div.modal-story {
     div.modal-story div.header img#profile {
       width: 34px;
       height: 34px;
-      border-radius: 17px; }
+      border-radius: 17px;
+      cursor: pointer; }
     div.modal-story div.header p.text {
       font-size: 14px;
       font-family: 'nsL';
       color: #ffffff;
       margin-top: -22px;
-      margin-left: 14px; }
+      margin-left: 14px;
+      cursor: pointer; }
     div.modal-story div.header p.time {
       font-size: 14px;
       font-family: 'nsL';
@@ -379,9 +558,11 @@ div.modal-story {
       top: 52px;
       font-size: 11px;
       font-family: 'nsL';
-      color: #ffffff; }
-    div.modal-story div.header span.declaration {
-      color: #ffffff; }
+      color: #ffffff;
+      cursor: pointer; }
+    div.modal-story div.header a.declaration {
+      color: #ffffff;
+      cursor: pointer; }
   div.modal-story div.header-line {
     width: 466px;
     height: 1px;
@@ -399,7 +580,7 @@ div.modal-story {
       width: 100%;
       height: 100%;
       object-fit: contain; }
-    div.modal-story div.story-content span.close {
+    div.modal-story div.story-content span.story-close {
       position: absolute;
       top: -4px;
       right: -30px;

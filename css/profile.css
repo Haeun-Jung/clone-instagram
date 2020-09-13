@@ -29,17 +29,28 @@ div.header {
     justify-content: center;
     box-sizing: border-box;
     padding: 12px 0px; }
-    div.header div.wrapper img {
+    div.header div.wrapper img.logo {
       cursor: pointer; }
-    div.header div.wrapper div.search {
-      width: 200px;
-      height: 26px;
-      text-align: center;
-      background-color: #fafafa;
-      border: 1px solid #e6e6e6;
-      border-radius: 4px; }
-      div.header div.wrapper div.search:focus {
-        outline: none; }
+    div.header div.wrapper div {
+      position: relative; }
+      div.header div.wrapper div input.search {
+        width: 200px;
+        height: 26px;
+        font-family: 'nsL';
+        text-align: center;
+        background-color: #fafafa;
+        border: 1px solid #e6e6e6;
+        border-radius: 4px; }
+        div.header div.wrapper div input.search:focus {
+          outline: none; }
+      div.header div.wrapper div img.search-icon {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        left: 68px;
+        top: 8px;
+        -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
+        filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6); }
     div.header div.wrapper div.buttons {
       display: flex;
       align-items: center; }
@@ -296,12 +307,14 @@ div.setting {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  cursor: pointer; }
   div.setting div.wrapper {
     display: flex;
     width: 400px;
     height: 480px;
     background-color: #ffffff;
+    border-radius: 12px;
     flex-direction: column;
     align-items: center; }
     div.setting div.wrapper button {
@@ -314,13 +327,10 @@ div.setting {
       border-top: 1px solid #dbdbdb;
       padding: 4px 8px;
       cursor: pointer; }
+      div.setting div.wrapper button:focus {
+        outline: none; }
       div.setting div.wrapper button:nth-child(1) {
-        border-top: none;
-        border-top-left-radius: 12px;
-        border-top-right-radius: 12px; }
-      div.setting div.wrapper button:nth-child(10) {
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px; }
+        border-top: none; }
 
 @font-face {
   font-family: 'nsB';

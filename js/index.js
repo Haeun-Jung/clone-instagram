@@ -3,21 +3,37 @@ function refreshPage() {
     window.location.reload();
 }
 
+const BASE_URL = 'http://sjud325.iptime.org:11080';
+
 // 이 페이지가 열렸을 때
 window.onload = function () {
-    showImage();
-    const contents = document.querySelector('div.content');
-    // scroll event
-    // contents.onscroll = function (e) {}
-    contents.addEventListener('scroll', function (e) {
-        if (
-            contents.scrollHeight ===
-            contents.scrollTop + contents.clientHeight
-        ) {
-            console.log('bottom hit!!!');
-            showImage();
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            const res = JSON.parse(this.response);
+            console.log(res);
+            if (this.status >= 200 && this.status < 300) {
+                // no error (200~299)
+            } else {
+                // yes error (400~599)
+                alert(`${this.status} 오류가 발생했습니다. 관리자에게 문의해주세요.`);
+            }
         }
-    });
+    };
+    xhr.open('POST', `${BASE_URL}/api/user/sign-in`); // query로 보낼 때는 ? 형태로 주소에 추가
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.send(JSON.stringify({ id: 'a', pw: 'b' })); // body로 담아 보낼 때는 send() 안에 넣기
+
+    // showImage();
+    // const contents = document.querySelector('div.content');
+    // // scroll event
+    // // contents.onscroll = function (e) {}
+    // contents.addEventListener('scroll', function (e) {
+    //     if (contents.scrollHeight === contents.scrollTop + contents.clientHeight) {
+    //         console.log('bottom hit!!!');
+    //         showImage();
+    //     }
+    // });
 };
 
 let currentImage = '';
@@ -146,15 +162,22 @@ function hideLikeComment(target) {
 }
 
 // 포스트 부분에서 다른부분을 눌렀을 시에 포스트 화면 가리기
-document
-    .querySelector('div.modal-post')
-    .addEventListener('click', function (e) {
-        if (e.target !== this) {
-            return; // 현재 함수 빠져나가기
-        }
-        console.log(e.target);
-        document.querySelector('div.modal-post').style.display = 'none';
-    });
+document.querySelector('div.modal-post').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.modal-post').style.display = 'none';
+});
+
+// post에서 X부분 눌러야 나가짐
+document.querySelector('span.post-close').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.modal-post').style.display = 'none';
+});
 
 // 스토리 보기
 function goToStory() {
@@ -162,7 +185,7 @@ function goToStory() {
 }
 
 // 스토리에서 X부분 눌러야 나가짐
-document.querySelector('span.close').addEventListener('click', function (e) {
+document.querySelector('span.story-close').addEventListener('click', function (e) {
     if (e.target !== this) {
         return; // 현재 함수 빠져나가기
     }
@@ -183,18 +206,74 @@ function follow() {
     if (count == 1) {
         document.querySelector('button.follow').textContent = '팔로잉';
         document.querySelector('button.follow').style.color = '#262626';
-        document.querySelector('button.follow').style.backgroundColor =
-            '#fafafa';
+        document.querySelector('button.follow').style.backgroundColor = '#fafafa';
         document.querySelector('button.follow').style.borderColor = '#e6e6e6';
         count == 0;
     } else {
         document.querySelector('button.follow').textContent = '팔로우';
         document.querySelector('button.follow').style.color = '#ffffff';
-        document.querySelector('button.follow').style.backgroundColor =
-            'rgba(var(--d69, 0, 149, 246), 1)';
+        document.querySelector('button.follow').style.backgroundColor = 'rgba(var(--d69, 0, 149, 246), 1)';
         ('#fafafa');
-        document.querySelector('button.follow').style.borderColor =
-            'transparent';
+        document.querySelector('button.follow').style.borderColor = 'transparent';
         count == 1;
     }
 }
+
+// 포스트 메뉴 열기 함수
+function postMenu() {
+    document.querySelector('div.post-menu').style.display = 'flex';
+}
+
+// 포스트 메뉴, 댓글 신고 취소 함수
+function cancel() {
+    document.querySelector('div.post-menu').style.display = 'none';
+    document.querySelector('div.comment-report').style.display = 'none';
+    document.querySelector('div.story-report').style.display = 'none';
+}
+
+// 포스트 메뉴 부분에서 다른부분을 눌렀을 시에 메뉴 화면 가리기
+document.querySelector('div.post-menu').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.post-menu').style.display = 'none';
+});
+
+// 포스트 댓글 focus할 때 신고버튼 보이기
+function showReport(target) {
+    target.querySelector('a.option').style.display = 'flex';
+}
+
+// 포스트 댓글 focus out할 때 신고버튼 안보이기
+function hideReport(target) {
+    target.querySelector('a.option').style.display = 'none';
+}
+
+// 포스트 댓글에 신고버튼
+function commentReport() {
+    document.querySelector('div.comment-report').style.display = 'flex';
+}
+
+// 포스트 댓글에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+document.querySelector('div.comment-report').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.comment-report').style.display = 'none';
+});
+
+// 스토리에 신고버튼
+function storyReport() {
+    document.querySelector('div.story-report').style.display = 'flex';
+}
+
+// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+document.querySelector('div.story-report').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.story-report').style.display = 'none';
+});

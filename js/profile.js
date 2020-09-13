@@ -170,6 +170,11 @@ function setting() {
     document.querySelector('div.setting').style.display = 'flex';
 }
 
+// 프로필 setting 함수
+function cancel() {
+    document.querySelector('div.setting').style.display = 'none';
+}
+
 // 프로필 setting 부분에서 다른부분을 눌렀을 시에 setting 화면 가리기
 document.querySelector('div.setting').addEventListener('click', function (e) {
     if (e.target !== this) {

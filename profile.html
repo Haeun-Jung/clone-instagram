@@ -10,9 +10,16 @@
     <body>
         <div class="header">
             <div class="wrapper">
-                <img src="img/Instagram.PNG" onClick="refreshPage()" />
+                <img
+                    class="logo"
+                    src="img/Instagram.PNG"
+                    onClick="refreshPage()"
+                />
                 <div class="blank"></div>
-                <input class="search" placeholder="검색" />
+                <div>
+                    <input type="text" class="search" placeholder="검색" />
+                    <img class="search-icon" src="img/search.png" />
+                </div>
                 <div class="blank"></div>
                 <div class="buttons">
                     <!-- prettier-ignore -->
@@ -92,15 +99,15 @@
                 <div class="posts" onmouseover="showLikeComment()"></div>
             </div>
         </div>
-        <!-- 모달 -->
+        <!-- 포스트 모달 -->
         <div class="modal-post">
             <div class="wrapper">
                 <div class="image">
-                    <img src="img/ppukku0.jpg" />
+                    <img id="post-main" src="img/ppukku0.jpg" />
                 </div>
                 <div class="post-content">
                     <div class="user">
-                        <img id="post-main" src="img/ppukku4.jpg" />
+                        <img src="img/ppukku9.jpg" />
                         <a>ppukku_world</a>
                         <span>ㆍ</span>
                         <button class="follow">팔로우</button>
@@ -110,10 +117,10 @@
                     <div class="rest">
                         <div class="text">
                             <div class="top">
-                                <img src="img/ppukku4.jpg" />
+                                <img src="img/ppukku9.jpg" />
                                 <div class="posting">
                                     <div>
-                                        <a class="id">hani</a>
+                                        <a class="id">ppukku_world</a>
                                         <p>
                                             우리 뿌꾸 이뻐죽겠지 않아요???^0^///
                                             뿌꾸의 더 많은 모습을 보고
@@ -126,7 +133,6 @@
                                     <p class="time">2시간</p>
                                 </div>
                             </div>
-                            <div class="center"></div>
                         </div>
                         <div class="buttons">
                             <button class="like">
@@ -197,7 +203,7 @@
                 <button>Instagram에서 보낸 이메일</button>
                 <button>문제 신고</button>
                 <button>로그아웃</button>
-                <button>취소</button>
+                <button onclick="cancel()">취소</button>
             </div>
         </div>
         <div class="footer">

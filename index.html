@@ -9,33 +9,21 @@
     <body>
         <div class="header">
             <div class="wrapper">
-                <img
-                    class="logo"
-                    src="img/Instagram.PNG"
-                    onclick="refreshPage()"
-                />
+                <img class="logo" src="img/Instagram.PNG" onclick="refreshPage()" />
                 <div class="blank"></div>
                 <div>
                     <input type="text" class="search" placeholder="검색" />
                     <img class="search-icon" src="img/search.png" />
                 </div>
                 <div class="blank"></div>
-                <button class="login" onclick="location.href='login.html'">
-                    로그인
-                </button>
-                <button class="join" onclick="location.href='join.html'">
-                    가입하기
-                </button>
+                <button class="login" onclick="location.href='login.html'">로그인</button>
+                <button class="join" onclick="location.href='join.html'">가입하기</button>
             </div>
         </div>
         <div class="header-line"></div>
         <div class="content">
             <div class="hashtag">
-                <img
-                    id="main-image"
-                    src="img/ppukku9.jpg"
-                    onclick="goToStory()"
-                />
+                <img id="main-image" src="img/ppukku9.jpg" onclick="goToStory()" />
                 <div class="result">
                     <div class="keyword">#강아지</div>
                     <div class="count">
@@ -50,20 +38,20 @@
             <p class="title">최근 사진</p>
             <div id="recent" class="posts"></div>
         </div>
-        <!-- 모달 -->
+        <!-- 포스트 모달 -->
         <div class="modal-post">
             <div class="wrapper">
                 <div class="image">
-                    <img src="img/ppukku0.jpg" />
+                    <img id="post-main" src="img/ppukku0.jpg" />
                 </div>
                 <div class="post-content">
                     <div class="user">
-                        <img id="post-main" src="img/ppukku4.jpg" />
+                        <img src="img/ppukku4.jpg" />
                         <a>ppukku_world</a>
                         <span>ㆍ</span>
                         <button class="follow">팔로우</button>
                         <div class="blank"></div>
-                        <a class="etc">…</a>
+                        <a class="etc" onclick="postMenu()">…</a>
                     </div>
                     <div class="rest">
                         <div class="text">
@@ -71,12 +59,8 @@
                                 <img src="img/ppukku4.jpg" />
                                 <div class="posting">
                                     <div>
-                                        <a class="id">hani</a>
-                                        <p>
-                                            우리 뿌꾸 이뻐죽겠지 않아요???^0^///
-                                            뿌꾸의 더 많은 모습을 보고
-                                            싶다면?!?!!
-                                        </p>
+                                        <a class="id">ppukku_world</a>
+                                        <p>우리 뿌꾸 이뻐죽겠지 않아요???^0^/// 뿌꾸의 더 많은 모습을 보고 싶다면?!?!!</p>
                                         <a class="tag">#뿌꾸</a>
                                         <a class="tag">#귀요미</a>
                                         <a class="tag">#멍스타그램</a>
@@ -84,7 +68,47 @@
                                     <p class="time">16주</p>
                                 </div>
                             </div>
-                            <div class="center"></div>
+                            <div class="center" onmouseover="showReport(this)" onmouseout="hideReport(this)">
+                                <img src="img/ppukku0.jpg" />
+                                <div class="posting">
+                                    <div>
+                                        <a class="id">hani</a>
+                                        <p>정말 너무 이뻐요</p>
+                                    </div>
+                                    <div class="info">
+                                        <p class="time">15주</p>
+                                        <p class="like">좋아요 12개</p>
+                                        <p class="reply">답글 달기</p>
+                                    </div>
+                                    <a class="option" onclick="commentReport()">...</a>
+                                    <svg class="heart" viewBox="0 0 48 48">
+                                        <path
+                                            d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="bottom" onmouseover="showReport(this)" onmouseout="hideReport(this)">
+                                <img src="img/ppukku9.jpg" />
+                                <div class="posting">
+                                    <div>
+                                        <a class="id">baegopa12</a>
+                                        <p>귀엽네요 맞팔 부탁드립니다~</p>
+                                    </div>
+                                    <div class="info">
+                                        <p class="time">15주</p>
+                                        <p class="like">좋아요 1개</p>
+                                        <p class="reply">답글 달기</p>
+                                    </div>
+                                    <p class="see-reply">──&nbsp&nbsp&nbsp답글 보기(1개)</p>
+                                    <a class="option" onclick="commentReport()">...</a>
+                                    <svg class="heart" viewBox="0 0 48 48">
+                                        <path
+                                            d="M34.6 6.1c5.7 0 10.4 5.2 10.4 11.5 0 6.8-5.9 11-11.5 16S25 41.3 24 41.9c-1.1-.7-4.7-4-9.5-8.3-5.7-5-11.5-9.2-11.5-16C3 11.3 7.7 6.1 13.4 6.1c4.2 0 6.5 2 8.1 4.3 1.9 2.6 2.2 3.9 2.5 3.9.3 0 .6-1.3 2.5-3.9 1.6-2.3 3.9-4.3 8.1-4.3m0-3c-4.5 0-7.9 1.8-10.6 5.6-2.7-3.7-6.1-5.5-10.6-5.5C6 3.1 0 9.6 0 17.6c0 7.3 5.4 12 10.6 16.5.6.5 1.3 1.1 1.9 1.7l2.3 2c4.4 3.9 6.6 5.9 7.6 6.5.5.3 1.1.5 1.6.5.6 0 1.1-.2 1.6-.5 1-.6 2.8-2.2 7.8-6.8l2-1.8c.7-.6 1.3-1.2 2-1.7C42.7 29.6 48 25 48 17.6c0-8-6-14.5-13.4-14.5z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                            </div>
                         </div>
                         <div class="buttons">
                             <button class="like">
@@ -127,9 +151,29 @@
                         </div>
                     </div>
                 </div>
-                <span class="close">X</span>
+                <a class="previous"><</a>
+                <a class="next">></a>
+                <span class="post-close">X</span>
             </div>
         </div>
+        <!-- 포스트 메뉴 모달 -->
+        <div class="post-menu">
+            <div class="wrapper">
+                <button>부적절한 콘텐츠 신고</button>
+                <button>게시물로 이동</button>
+                <button>공유하기</button>
+                <button>링크 복사</button>
+                <button onclick="cancel()">취소</button>
+            </div>
+        </div>
+        <!-- 포스트 댓글 신고 모달 -->
+        <div class="comment-report">
+            <div class="wrapper">
+                <button class="comment-menu">신고</button>
+                <button onclick="cancel()">취소</button>
+            </div>
+        </div>
+        <!-- 스토리 모달 -->
         <div class="modal-story">
             <div class="header">
                 <img id="profile" src="img/ppukku6.jpg" />
@@ -137,12 +181,19 @@
                 <p class="time">20시간</p>
                 <p class="user">ppukku0923</p>
                 <div class="blank"></div>
-                <span class="declaration">ㆍㆍㆍ</span>
+                <a class="declaration" onclick="storyReport()">ㆍㆍㆍ</a>
             </div>
             <div class="header-line"></div>
             <div class="story-content">
                 <img id="story" src="img/ppukku0.jpg" />
-                <span class="close">X</span>
+                <span class="story-close">X</span>
+            </div>
+        </div>
+        <!-- 스토리 신고 모달 -->
+        <div class="story-report">
+            <div class="wrapper">
+                <button class="story-menu">부적절한 콘텐츠 신고</button>
+                <button onclick="cancel()">취소</button>
             </div>
         </div>
     </body>

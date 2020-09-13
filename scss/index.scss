@@ -60,11 +60,12 @@ div.header {
 
             img.search-icon {
                 position: absolute;
-                width: 14px;
-                height: 14px;
+                width: 12px;
+                height: 12px;
                 left: 68px;
                 top: 8px;
-                color: #e6e6e6;
+                -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
+                filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
             }
         }
 
@@ -295,12 +296,14 @@ div.modal-post {
                     width: 40px;
                     height: 40px;
                     border-radius: 20px;
+                    cursor: pointer;
                 }
 
                 a {
                     font-size: 12px;
                     font-family: 'nsM';
                     padding: 0px 14px;
+                    cursor: pointer;
                 }
 
                 span {
@@ -313,44 +316,57 @@ div.modal-post {
                     font-size: 14px;
                     font-family: 'nsM';
                     background-color: transparent;
+                    cursor: pointer;
                 }
 
                 a.etc {
                     right: 0;
-                    font-family: 'nsM';
+                    font-family: 'nsB';
+                    cursor: pointer;
                 }
             }
 
             div.rest {
                 display: flex;
                 width: 100%;
-                flex: 1;
+                height: 525px;
                 flex-direction: column;
 
                 div.text {
                     width: 100%;
-                    flex: 1;
+                    height: calc(100%-32px);
                     box-sizing: border-box;
+                    overflow-y: scroll;
                     padding: 20px;
 
-                    div.top {
+                    &::-webkit-scrollbar {
+                        display: none;
+                    }
+
+                    div.top,
+                    div.center,
+                    div.bottom {
                         display: flex;
                         width: 100%;
+                        margin-bottom: 20px;
 
                         img {
                             width: 40px;
                             height: 40px;
                             border-radius: 20px;
                             margin-right: 12px;
+                            cursor: pointer;
                         }
 
                         div.posting {
+                            position: relative;
                             flex: 1;
 
                             div {
                                 a.id {
                                     font-size: 12px;
                                     font-family: 'nsM';
+                                    cursor: pointer;
                                 }
 
                                 p {
@@ -362,13 +378,72 @@ div.modal-post {
                                     font-size: 14px;
                                     font-family: 'nsL';
                                     color: #00376b;
+                                    cursor: pointer;
                                 }
                             }
 
                             p.time {
                                 font-size: 12px;
                                 color: #dbdbdb;
-                                margin: 16px 0px 4px 0px;
+                                margin: 10px 0px 4px 0px;
+                                cursor: pointer;
+                            }
+
+                            div.info {
+                                display: flex;
+
+                                p.time {
+                                    font-size: 13px;
+                                    font-family: 'nsM';
+                                    color: #dbdbdb;
+                                    margin: 10px 10px 4px 0px;
+                                    cursor: pointer;
+                                }
+
+                                p.like {
+                                    font-size: 13px;
+                                    font-family: 'nsM';
+                                    color: #8e8e8e;
+                                    margin: 10px 10px 4px 0px;
+                                    cursor: pointer;
+                                }
+
+                                p.reply {
+                                    font-size: 13px;
+                                    font-family: 'nsM';
+                                    color: #8e8e8e;
+                                    margin: 10px 0px 4px 0px;
+                                    cursor: pointer;
+                                }
+                            }
+                            p.see-reply {
+                                font-size: 13px;
+                                font-family: 'nsM';
+                                color: #8e8e8e;
+                                margin: 10px 0px 4px 0px;
+                                cursor: pointer;
+                            }
+
+                            a.option {
+                                display: none;
+                                position: absolute;
+                                width: 16px;
+                                height: 16px;
+                                top: 18px;
+                                right: 38px;
+                                font-family: 'nsB';
+                                color: #8e8e8e;
+                                cursor: pointer;
+                            }
+
+                            svg.heart {
+                                position: absolute;
+                                width: 12px;
+                                height: 12px;
+                                top: 30px;
+                                right: 10px;
+                                color: #262626;
+                                cursor: pointer;
                             }
                         }
                     }
@@ -427,7 +502,7 @@ div.modal-post {
                     padding-right: 16px;
 
                     textarea {
-                        height: 60px;
+                        height: 44px;
                         flex: 1;
                         font-size: 14px;
                         font-family: 'nsM';
@@ -436,7 +511,7 @@ div.modal-post {
                         overflow: hidden;
                         box-sizing: border-box;
                         margin-right: 10px;
-                        padding-top: 20px;
+                        padding-top: 10px;
 
                         &:focus {
                             outline: none;
@@ -449,19 +524,128 @@ div.modal-post {
                         color: #0096f6;
                         background-color: transparent;
                         opacity: 0.3;
+                        margin-top: -4px;
                     }
                 }
             }
         }
 
-        span.close {
+        a.previous {
             position: absolute;
-            top: -4px;
-            right: -30px;
+            top: 290px;
+            left: -30px;
             font-size: 24px;
-            font-family: 'nsM';
+            font-family: 'nsB';
             color: #ffffff;
             cursor: pointer;
+        }
+
+        a.next {
+            position: absolute;
+            top: 290px;
+            right: -30px;
+            font-size: 24px;
+            font-family: 'nsB';
+            color: #ffffff;
+            cursor: pointer;
+        }
+    }
+    span.post-close {
+        position: absolute;
+        top: -4px;
+        right: -30px;
+        font-size: 24px;
+        font-family: 'nsM';
+        color: #ffffff;
+        cursor: pointer;
+    }
+}
+
+div.post-menu {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    div.wrapper {
+        display: flex;
+        width: 400px;
+        max-height: 100%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            width: 100%;
+            min-height: 48px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5px;
+            background-color: transparent;
+            border-top: 1px solid #dbdbdb;
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:nth-child(1) {
+                color: #ed4956;
+                border-top: none;
+            }
+        }
+    }
+}
+
+div.comment-report,
+div.story-report {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    cursor: pointer;
+
+    div.wrapper {
+        display: flex;
+        width: 400px;
+        max-height: 100%;
+        background-color: #ffffff;
+        border-radius: 12px;
+        flex-direction: column;
+        align-items: center;
+
+        button {
+            width: 100%;
+            min-height: 48px;
+            font-size: 14px;
+            text-align: center;
+            line-height: 1.5px;
+            background-color: transparent;
+            border-top: 1px solid #dbdbdb;
+            padding: 4px 8px;
+            cursor: pointer;
+
+            &:focus {
+                outline: none;
+            }
+
+            &:nth-child(1) {
+                border-top: none;
+            }
+
+            &.comment-menu {
+                color: #ed4956;
+            }
         }
     }
 }
@@ -487,6 +671,7 @@ div.modal-story {
             width: 34px;
             height: 34px;
             border-radius: 17px;
+            cursor: pointer;
         }
 
         p.text {
@@ -495,6 +680,7 @@ div.modal-story {
             color: #ffffff;
             margin-top: -22px;
             margin-left: 14px;
+            cursor: pointer;
         }
 
         p.time {
@@ -512,10 +698,12 @@ div.modal-story {
             font-size: 11px;
             font-family: 'nsL';
             color: #ffffff;
+            cursor: pointer;
         }
 
-        span.declaration {
+        a.declaration {
             color: #ffffff;
+            cursor: pointer;
         }
     }
 
@@ -541,7 +729,7 @@ div.modal-story {
             object-fit: contain;
         }
 
-        span.close {
+        span.story-close {
             position: absolute;
             top: -4px;
             right: -30px;
