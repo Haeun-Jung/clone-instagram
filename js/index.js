@@ -1,150 +1,129 @@
-// 페이지 새로고침
-function refreshPage() {
-    window.location.reload();
-}
-
 const BASE_URL = 'http://sjud325.iptime.org:11080';
+
+let page = 1;
+let isLoading = false;
 
 // 이 페이지가 열렸을 때
 window.onload = function () {
-    const xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
+    const xhrPopular = new XMLHttpRequest();
+    xhrPopular.onreadystatechange = function () {
         if (this.readyState === XMLHttpRequest.DONE) {
             const res = JSON.parse(this.response);
             console.log(res);
             if (this.status >= 200 && this.status < 300) {
                 // no error (200~299)
+                showPopularImage(res);
             } else {
                 // yes error (400~599)
                 alert(`${this.status} 오류가 발생했습니다. 관리자에게 문의해주세요.`);
             }
         }
     };
-    xhr.open('POST', `${BASE_URL}/api/user/sign-in`); // query로 보낼 때는 ? 형태로 주소에 추가
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.send(JSON.stringify({ id: 'a', pw: 'b' })); // body로 담아 보낼 때는 send() 안에 넣기
+    // query로 보낼 때는 ? 형태로 주소에 추가
+    // path로 보낼 때는 / 붙인 후 주소에 추가
+    xhrPopular.open('GET', `${BASE_URL}/api/post/popular`);
+    // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
+    xhrPopular.setRequestHeader('Content-Type', 'application/json');
+    // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기
+    xhrPopular.send();
 
-    // showImage();
-    // const contents = document.querySelector('div.content');
-    // // scroll event
-    // // contents.onscroll = function (e) {}
-    // contents.addEventListener('scroll', function (e) {
-    //     if (contents.scrollHeight === contents.scrollTop + contents.clientHeight) {
-    //         console.log('bottom hit!!!');
-    //         showImage();
-    //     }
-    // });
+    handleScrollDown();
+
+    // recognize scroll to bottom event
+    const contents = document.querySelector('div.content');
+    contents.addEventListener('scroll', function (e) {
+        if (contents.scrollHeight === contents.scrollTop + contents.clientHeight) {
+            console.log('bottom hit!!!');
+            handleScrollDown();
+        }
+    });
 };
 
-let currentImage = '';
-
-// 게시글을 보여주기 위한 배열
-const example = [
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku0.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku1.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku2.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku3.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku4.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku5.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku6.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku7.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku8.jpg',
-        },
-    },
-];
-
-// 게시글들 보여주기
-function showImage() {
-    console.log('showImage() invoked.');
-
-    const wrapper = document.querySelector('div.posts');
-    console.log(wrapper);
-
-    /*
-    원래의 경우 API 통신을 해서 JSON을 받아오고,
-    JSON을 통해 이미지를 띄움.
-    */
-
-    // const: 변하지 않는 상수 선언
-    // let: 변할 수 있는 변수 선언
-    let contents = '';
-    for (let i = 0; i < example.length; i++) {
-        // contents += '<image src="toeicSpeaking.jpg" />';
-        const likes = example[i].likes;
-        const comments = example[i].comments;
-        const url = example[i].image.url;
-        contents += `<div class="image-container" onclick="goToPost(this)" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
-        contents += `<div class="numbers">`;
-        contents += `<div class="wrapper">`;
-        contents += `<img />`;
-        contents += `<span>${likes}</span>`;
-        contents += `</div>`; // end of wrapper
-        contents += `<div class="wrapper">`;
-        contents += `<img />`;
-        contents += `<span>${comments}</span>`;
-        contents += `</div>`; // end of wrapper
-        contents += `</div>`; // end of numbers
-        contents += `<img class="post" src="img/${url}" />`;
-        contents += `</div>`; // end of image-container
+function handleScrollDown() {
+    if (isLoading) {
+        return;
     }
-    wrapper.innerHTML += contents;
-    // wrapper.innerHTML += contents;
+    isLoading = true;
+    const xhrRecent = new XMLHttpRequest();
+    xhrRecent.onreadystatechange = function () {
+        if (this.readyState === XMLHttpRequest.DONE) {
+            const res = JSON.parse(this.response);
+            console.log(res);
+            if (this.status >= 200 && this.status < 300) {
+                // no error (200~299)
+                showRecentImage(res);
+            } else {
+                // yes error (400~599)
+                alert(`${this.status} 오류가 발생했습니다. 관리자에게 문의해주세요.`);
+            }
+        }
+    };
+    // query로 보낼 때는 ? 형태로 주소에 추가
+    // path로 보낼 때는 / 붙인 후 주소에 추가
+    xhrRecent.open('GET', `${BASE_URL}/api/post/recent?page=${page}`);
+    // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
+    xhrRecent.setRequestHeader('Content-Type', 'application/json');
+    // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기
+    xhrRecent.send();
+}
+
+// 인기 게시물 보여주기
+function showPopularImage(res) {
+    const wrapper = document.querySelector('div#popular');
+    let html = '';
+    for (let i = 0; i < res.length; i++) {
+        const id = res[i].id;
+        const url = res[i].url;
+        const likes = res[i].number.likes;
+        const comments = res[i].number.comments;
+        html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
+        html += `<div class="numbers">`;
+        html += `<div class="wrapper">`;
+        html += `<img />`;
+        html += `<span>${likes}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `<div class="wrapper">`;
+        html += `<img />`;
+        html += `<span>${comments}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `</div>`; // end of numbers
+        html += `<img class="post" src="${BASE_URL}${url}" />`;
+        html += `</div>`; // end of image-container
+    }
+    wrapper.innerHTML += html;
+}
+
+// 최신 게시물 보여주기
+function showRecentImage(res) {
+    page = res.next;
+    const wrapper = document.querySelector('div#recent');
+    let html = '';
+    for (let i = 0; i < res.results.length; i++) {
+        const id = res.results[i].id;
+        const url = res.results[i].url;
+        const likes = res.results[i].number.likes;
+        const comments = res.results[i].number.comments;
+        html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
+        html += `<div class="numbers">`;
+        html += `<div class="wrapper">`;
+        html += `<img />`;
+        html += `<span>${likes}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `<div class="wrapper">`;
+        html += `<img />`;
+        html += `<span>${comments}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `</div>`; // end of numbers
+        html += `<img class="post" src="${BASE_URL}${url}" />`;
+        html += `</div>`; // end of image-container
+    }
+    wrapper.innerHTML += html;
+    isLoading = false;
 }
 
 // 사진 눌렀을 때 포스트 보이기
-function goToPost(target) {
+function goToPost(target, id) {
+    console.log(id);
     const url = target.querySelector('img.post').getAttribute('src');
     console.log(url);
     document.querySelector('img#post-main').setAttribute('src', url);
@@ -200,23 +179,13 @@ document.getElementById('url[i]').onclick = function () {
 };
 */
 
+// 팔로우버튼
 function follow() {
-    var count = 1;
-
-    if (count == 1) {
-        document.querySelector('button.follow').textContent = '팔로잉';
-        document.querySelector('button.follow').style.color = '#262626';
-        document.querySelector('button.follow').style.backgroundColor = '#fafafa';
-        document.querySelector('button.follow').style.borderColor = '#e6e6e6';
-        count == 0;
-    } else {
-        document.querySelector('button.follow').textContent = '팔로우';
-        document.querySelector('button.follow').style.color = '#ffffff';
-        document.querySelector('button.follow').style.backgroundColor = 'rgba(var(--d69, 0, 149, 246), 1)';
-        ('#fafafa');
-        document.querySelector('button.follow').style.borderColor = 'transparent';
-        count == 1;
-    }
+    const btn = document.querySelector('button.follow');
+    btn.innerText = btn.innerText === '팔로우' ? '팔로잉' : '팔로우';
+    // btn.classList.add('active');
+    // btn.classList.remove('active');
+    btn.classList.toggle('active');
 }
 
 // 포스트 메뉴 열기 함수

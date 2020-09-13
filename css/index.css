@@ -135,6 +135,10 @@ div.content {
         cursor: pointer; }
         div.content div.hashtag div.result button.follow:focus {
           outline: none; }
+        div.content div.hashtag div.result button.follow.active {
+          color: #262626;
+          background-color: #fafafa;
+          border-color: #e6e6e6; }
   div.content p.title {
     display: flex;
     width: 935px;
@@ -187,7 +191,8 @@ div.content {
         width: 100%;
         height: 100%;
         top: 0px;
-        left: 0px; }
+        left: 0px;
+        object-fit: fill; }
 
 div.modal-post {
   display: none;

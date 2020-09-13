@@ -175,6 +175,12 @@ div.content {
                 &:focus {
                     outline: none;
                 }
+
+                &.active {
+                    color: #262626;
+                    background-color: #fafafa;
+                    border-color: #e6e6e6;
+                }
             }
         }
     }
@@ -245,6 +251,7 @@ div.content {
                 height: 100%;
                 top: 0px;
                 left: 0px;
+                object-fit: fill;
             }
         }
     }
