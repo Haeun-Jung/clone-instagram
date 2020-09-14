@@ -35,14 +35,14 @@
             </div>
             <p class="title">인기 게시물</p>
             <div id="popular" class="posts"></div>
-            <p class="title">최근 사진</p>
+            <p class="title recent">최근 사진</p>
             <div id="recent" class="posts"></div>
         </div>
         <!-- 포스트 모달 -->
         <div class="modal-post">
             <div class="wrapper">
                 <div class="image">
-                    <img id="post-main" src="img/ppukku0.jpg" />
+                    <img id="post-main" ondblclick="dblClickLike()" />
                 </div>
                 <div class="post-content">
                     <div class="user">

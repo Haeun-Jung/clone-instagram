@@ -246,3 +246,7 @@ document.querySelector('div.story-report').addEventListener('click', function (e
     console.log(e.target);
     document.querySelector('div.story-report').style.display = 'none';
 });
+
+function dblClickLike() {
+    document.querySelector('span.').style.display = 'flex';
+}
