@@ -12,8 +12,15 @@
                 <img class="logo" src="img/Instagram.PNG" onclick="location.reload();" />
                 <div class="blank"></div>
                 <div>
-                    <input type="text" class="search" placeholder="검색" />
+                    <input
+                        type="text"
+                        class="search"
+                        placeholder="검색"
+                        onfocus="searchFocus()"
+                        onfocusout="searchFocusOut()"
+                    />
                     <img class="search-icon" src="img/search.png" />
+                    <a class="search-cancel" onmousedown="searchCancel()">x</a>
                 </div>
                 <div class="blank"></div>
                 <button class="login" onclick="location.href='login.html'">로그인</button>

@@ -250,3 +250,22 @@ document.querySelector('div.story-report').addEventListener('click', function (e
 function dblClickLike() {
     document.querySelector('span.').style.display = 'flex';
 }
+
+function searchCancel() {
+    document.querySelector('input.search').value = '';
+}
+
+function searchFocus() {
+    document.querySelector('img.search-icon').style.left = '10px';
+    document.querySelector('a.search-cancel').style.display = 'flex';
+}
+
+function searchFocusOut() {
+    const search = document.querySelector('input.search');
+    document.querySelector('img.search-icon').style.left = '68px';
+    document.querySelector('a.search-cancel').style.display = 'none';
+    search.style.textAlign = 'center';
+    search.style.textSize = '8px';
+    search.style.color = '#d4d4d4';
+    search.style.marginLeft = '3px';
+}
