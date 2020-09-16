@@ -5,10 +5,7 @@ window.onload = function () {
     // scroll event
     // contents.onscroll = function (e) {}
     contents.addEventListener('scroll', function (e) {
-        if (
-            contents.scrollHeight ===
-            contents.scrollTop + contents.clientHeight
-        ) {
+        if (contents.scrollHeight === contents.scrollTop + contents.clientHeight) {
             console.log('bottom hit!!!');
             showImage();
         }
@@ -139,15 +136,13 @@ function hideLikeComment(target) {
 }
 
 // 포스트 부분에서 다른부분을 눌렀을 시에 포스트 화면 가리기
-document
-    .querySelector('div.modal-post')
-    .addEventListener('click', function (e) {
-        if (e.target !== this) {
-            return; // 현재 함수 빠져나가기
-        }
-        console.log(e.target);
-        document.querySelector('div.modal-post').style.display = 'none';
-    });
+document.querySelector('div.modal-post').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.modal-post').style.display = 'none';
+});
 
 // 스토리 보기
 function goToStory() {
@@ -161,8 +156,7 @@ document.querySelector('span.close').addEventListener('click', function (e) {
     }
     console.log(e.target);
     document.querySelector('div.modal-story').style.display = 'none';
-    document.querySelector('div.user-profile>img').style.borderColor =
-        '#e8e8e8';
+    document.querySelector('div.user-profile>img').style.borderColor = '#e8e8e8';
 });
 
 // 프로필 setting
@@ -183,3 +177,8 @@ document.querySelector('div.setting').addEventListener('click', function (e) {
     console.log(e.target);
     document.querySelector('div.setting').style.display = 'none';
 });
+
+// 미니프로필 누르면 수정창 뜨게하기
+function profileEdit() {
+    document.querySelector('div.profile-edit').style.display = 'flex';
+}

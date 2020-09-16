@@ -58,6 +58,7 @@ div.header {
         margin-left: 22px;
         cursor: pointer; }
       div.header div.wrapper div.buttons div.profile {
+        position: relative;
         width: 26px;
         height: 26px;
         border: 1px solid rgba(var(--i1d, 38, 38, 38), 1);
@@ -69,6 +70,51 @@ div.header {
           height: 22px;
           border-radius: 22px;
           padding: 2px; }
+        div.header div.wrapper div.buttons div.profile div.profile-edit {
+          display: flex;
+          position: absolute;
+          width: 230px;
+          height: 157px;
+          top: 38px;
+          right: -20px;
+          align-items: center;
+          justify-content: center;
+          background-color: transparent;
+          border: solid 1px #dbdbdb;
+          border-radius: 8px;
+          cursor: pointer; }
+          div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border-radius: 12px;
+            flex-direction: column; }
+            div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button {
+              display: flex;
+              width: 100%;
+              min-height: 37px;
+              font-size: 14px;
+              text-align: left;
+              background-color: transparent;
+              align-items: center;
+              box-sizing: border-box;
+              padding: 8px 16px;
+              cursor: pointer; }
+              div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button:focus {
+                outline: none; }
+              div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button:nth-child(1) {
+                border-top: none; }
+              div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button:nth-child(3) {
+                margin-bottom: 4px; }
+              div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button svg {
+                width: 16px;
+                height: 16px; }
+              div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button span {
+                margin-left: 14px; }
+            div.header div.wrapper div.buttons div.profile div.profile-edit div.wrapper button.logout {
+              border-top: 1px solid #dbdbdb;
+              margin-bottom: 4px; }
 
 div.header-line {
   width: 100%;
