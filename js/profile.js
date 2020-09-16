@@ -180,5 +180,47 @@ document.querySelector('div.setting').addEventListener('click', function (e) {
 
 // 미니프로필 누르면 수정창 뜨게하기
 function profileEdit() {
-    document.querySelector('div.profile-edit').style.display = 'flex';
+    const edit = document.querySelector('div.profile-edit');
+    edit.style.display = edit.style.display === 'none' ? 'flex' : 'none';
+}
+
+// 미니프로필 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
+document.querySelector('div.profile-edit').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.profile-edit').style.display = 'none';
+});
+
+// posts
+function posts() {
+    document.querySelector('div.posts').style.display = 'grid';
+    document.querySelector('div.IGTV').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'none';
+}
+
+// IGTV
+function IGTV() {
+    document.querySelector('div.IGTV').style.display = 'flex';
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'none';
+}
+
+// saved
+function saved() {
+    document.querySelector('div.saved').style.display = 'flex';
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.IGTV').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'none';
+}
+
+// tagged
+function tagged() {
+    document.querySelector('div.tagged').style.display = 'flex';
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.IGTV').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'none';
 }
