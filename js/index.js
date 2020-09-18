@@ -173,11 +173,19 @@ document.querySelector('span.story-close').addEventListener('click', function (e
     document.querySelector('div.hashtag>img').style.borderColor = '#e8e8e8';
 });
 
-/*
-document.getElementById('url[i]').onclick = function () {
-    location.href = 'post.html';
-};
-*/
+// 스토리에 신고버튼
+function storyReport() {
+    document.querySelector('div.story-report').style.display = 'flex';
+}
+
+// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+document.querySelector('div.story-report').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.story-report').style.display = 'none';
+});
 
 // 팔로우버튼
 function follow() {
@@ -231,20 +239,6 @@ document.querySelector('div.comment-report').addEventListener('click', function 
     }
     console.log(e.target);
     document.querySelector('div.comment-report').style.display = 'none';
-});
-
-// 스토리에 신고버튼
-function storyReport() {
-    document.querySelector('div.story-report').style.display = 'flex';
-}
-
-// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
-document.querySelector('div.story-report').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.story-report').style.display = 'none';
 });
 
 function dblClickLike() {

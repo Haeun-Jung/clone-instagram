@@ -228,7 +228,8 @@ div.modal-post {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.65);
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 1; }
   div.modal-post div.wrapper {
     display: flex;
     position: relative;
@@ -273,6 +274,7 @@ div.modal-post {
           font-size: 14px;
           font-family: 'nsM';
           background-color: transparent;
+          outline: none;
           cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.user a.etc {
           right: 0;
@@ -399,15 +401,17 @@ div.modal-post {
           display: flex;
           border-top: 1px solid rgba(var(--ce3, 239, 239, 239), 1);
           padding: 14px 8px 10px 16px;
-          margin-top: 4px;
-          cursor: pointer; }
+          margin-top: 4px; }
           div.modal-post div.wrapper div.post-content div.rest div.buttons button {
             width: 24px;
             height: 24px;
             background-color: transparent;
-            margin-right: 14px; }
+            margin-right: 14px;
+            outline: none;
+            cursor: pointer; }
           div.modal-post div.wrapper div.post-content div.rest div.buttons button.save {
-            margin-right: 6px; }
+            margin-right: 6px;
+            outline: none; }
         div.modal-post div.wrapper div.post-content div.rest button.likes-count {
           background-color: transparent;
           font-family: 'nsM';
@@ -415,6 +419,7 @@ div.modal-post {
           margin-bottom: 4px;
           padding-left: 16px;
           padding-right: 16px;
+          outline: none;
           cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.rest div.post-date {
           font-size: 10px;
@@ -451,7 +456,9 @@ div.modal-post {
             color: #0096f6;
             background-color: transparent;
             opacity: 0.3;
-            margin-top: -4px; }
+            margin-top: -4px;
+            outline: none;
+            cursor: pointer; }
     div.modal-post div.wrapper a.previous {
       position: absolute;
       top: 290px;
@@ -485,6 +492,7 @@ div.post-menu {
   background-color: rgba(0, 0, 0, 0.65);
   align-items: center;
   justify-content: center;
+  z-index: 2;
   cursor: pointer; }
   div.post-menu div.wrapper {
     display: flex;
@@ -559,7 +567,8 @@ div.modal-story {
   background-color: #262626;
   flex-direction: column;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  z-index: 1; }
   div.modal-story div.header {
     display: flex;
     position: relative;

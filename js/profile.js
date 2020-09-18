@@ -150,13 +150,27 @@ function goToStory() {
 }
 
 // 스토리에서 X부분 눌러야 나가짐
-document.querySelector('span.close').addEventListener('click', function (e) {
+document.querySelector('span.story-close').addEventListener('click', function (e) {
     if (e.target !== this) {
         return; // 현재 함수 빠져나가기
     }
     console.log(e.target);
     document.querySelector('div.modal-story').style.display = 'none';
-    document.querySelector('div.user-profile>img').style.borderColor = '#e8e8e8';
+    document.querySelector('div.hashtag>img').style.borderColor = '#e8e8e8';
+});
+
+// 스토리에 신고버튼
+function storyReport() {
+    document.querySelector('div.story-report').style.display = 'flex';
+}
+
+// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+document.querySelector('div.story-report').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    console.log(e.target);
+    document.querySelector('div.story-report').style.display = 'none';
 });
 
 // 프로필 setting
@@ -179,18 +193,17 @@ document.querySelector('div.setting').addEventListener('click', function (e) {
 });
 
 // 미니프로필 누르면 수정창 뜨게하기
-function profileEdit() {
+document.querySelector('div.profile > img').addEventListener('click', function (e) {
     const edit = document.querySelector('div.profile-edit');
     edit.style.display = edit.style.display === 'none' ? 'flex' : 'none';
-}
+});
 
 // 미니프로필 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
 document.querySelector('div.profile-edit').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
+    const bg = this.querySelector('div.bg');
+    if (e.target === bg) {
+        this.style.display = 'none';
     }
-    console.log(e.target);
-    document.querySelector('div.profile-edit').style.display = 'none';
 });
 
 // posts
@@ -224,3 +237,32 @@ function tagged() {
     document.querySelector('div.IGTV').style.display = 'none';
     document.querySelector('div.saved').style.display = 'none';
 }
+
+function heart() {
+    document.querySelector('a.white-heart').style.display = 'none';
+    document.querySelector('a.black-heart').style.display = 'flex';
+    document.querySelector('div.profile').style.borderColor = 'transparent';
+}
+
+function unHeart() {
+    document.querySelector('a.black-heart').style.display = 'none';
+    document.querySelector('a.white-heart').style.display = 'flex';
+    document.querySelector('div.profile').style.borderColor = 'rgba(var(--i1d, 38, 38, 38), 1)';
+}
+
+// 하트 누르면 활동창 뜨게하기
+document.querySelector('a.white-heart').addEventListener('click', function (e) {
+    const popup = document.querySelector('div.post-activity');
+    popup.style.display = popup.style.display === 'none' ? 'flex' : 'none';
+});
+
+// 활동창 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
+document.querySelector('div.post-activity').addEventListener('click', function (e) {
+    const bg = this.querySelector('div.bg');
+    if (e.target === bg) {
+        this.style.display = 'none';
+        document.querySelector('a.black-heart').style.display = 'none';
+        document.querySelector('a.white-heart').style.display = 'flex';
+        document.querySelector('div.profile').style.borderColor = 'rgba(var(--i1d, 38, 38, 38), 1)';
+    }
+});
