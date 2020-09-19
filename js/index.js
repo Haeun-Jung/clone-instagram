@@ -150,7 +150,7 @@ document.querySelector('div.modal-post').addEventListener('click', function (e) 
 });
 
 // post에서 X부분 눌러야 나가짐
-document.querySelector('span.post-close').addEventListener('click', function (e) {
+document.querySelector('svg.post-close').addEventListener('click', function (e) {
     if (e.target !== this) {
         return; // 현재 함수 빠져나가기
     }
@@ -164,7 +164,7 @@ function goToStory() {
 }
 
 // 스토리에서 X부분 눌러야 나가짐
-document.querySelector('span.story-close').addEventListener('click', function (e) {
+document.querySelector('svg.story-close').addEventListener('click', function (e) {
     if (e.target !== this) {
         return; // 현재 함수 빠져나가기
     }
@@ -242,7 +242,10 @@ document.querySelector('div.comment-report').addEventListener('click', function 
 });
 
 function dblClickLike() {
-    document.querySelector('span.').style.display = 'flex';
+    document.querySelector('div.heart-wrapper').style.display = 'flex';
+    setTimeout(function () {
+        document.querySelector('div.heart-wrapper').style.display = 'none';
+    }, 1500);
 }
 
 function searchCancel() {
@@ -262,4 +265,11 @@ function searchFocusOut() {
     search.style.textSize = '8px';
     search.style.color = '#d4d4d4';
     search.style.marginLeft = '3px';
+}
+
+const hearts = document.querySelectorAll('svg.heart');
+for (let heart of hearts) {
+    heart.addEventListener('click', function (e) {
+        this.classList.toggle('active');
+    });
 }

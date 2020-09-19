@@ -206,37 +206,62 @@ document.querySelector('div.profile-edit').addEventListener('click', function (e
     }
 });
 
+const btnPosts = document.querySelector('div.btn-posts');
+const btnIgtv = document.querySelector('div.btn-igtv');
+const btnSaved = document.querySelector('div.btn-saved');
+const btnTagged = document.querySelector('div.btn-tagged');
+const divPosts = document.querySelector('div.posts');
+const divIgtv = document.querySelector('div.igtv');
+const divSaved = document.querySelector('div.saved');
+const divTagged = document.querySelector('div.tagged');
+
 // posts
-function posts() {
-    document.querySelector('div.posts').style.display = 'grid';
-    document.querySelector('div.IGTV').style.display = 'none';
-    document.querySelector('div.saved').style.display = 'none';
-    document.querySelector('div.tagged').style.display = 'none';
-}
+btnPosts.addEventListener('click', function (e) {
+    btnPosts.classList.add('active');
+    btnIgtv.classList.remove('active');
+    btnSaved.classList.remove('active');
+    btnTagged.classList.remove('active');
+    divPosts.style.display = 'grid';
+    divIgtv.style.display = 'none';
+    divSaved.style.display = 'none';
+    divTagged.style.display = 'none';
+});
 
 // IGTV
-function IGTV() {
-    document.querySelector('div.IGTV').style.display = 'flex';
-    document.querySelector('div.posts').style.display = 'none';
-    document.querySelector('div.saved').style.display = 'none';
-    document.querySelector('div.tagged').style.display = 'none';
-}
+btnIgtv.addEventListener('click', function (e) {
+    btnPosts.classList.remove('active');
+    btnIgtv.classList.add('active');
+    btnSaved.classList.remove('active');
+    btnTagged.classList.remove('active');
+    divPosts.style.display = 'none';
+    divIgtv.style.display = 'flex';
+    divSaved.style.display = 'none';
+    divTagged.style.display = 'none';
+});
 
 // saved
-function saved() {
-    document.querySelector('div.saved').style.display = 'flex';
-    document.querySelector('div.posts').style.display = 'none';
-    document.querySelector('div.IGTV').style.display = 'none';
-    document.querySelector('div.tagged').style.display = 'none';
-}
+btnSaved.addEventListener('click', function (e) {
+    btnPosts.classList.remove('active');
+    btnIgtv.classList.remove('active');
+    btnSaved.classList.add('active');
+    btnTagged.classList.remove('active');
+    divPosts.style.display = 'none';
+    divIgtv.style.display = 'none';
+    divSaved.style.display = 'flex';
+    divTagged.style.display = 'none';
+});
 
 // tagged
-function tagged() {
-    document.querySelector('div.tagged').style.display = 'flex';
-    document.querySelector('div.posts').style.display = 'none';
-    document.querySelector('div.IGTV').style.display = 'none';
-    document.querySelector('div.saved').style.display = 'none';
-}
+btnTagged.addEventListener('click', function (e) {
+    btnPosts.classList.remove('active');
+    btnIgtv.classList.remove('active');
+    btnSaved.classList.remove('active');
+    btnTagged.classList.add('active');
+    divPosts.style.display = 'none';
+    divIgtv.style.display = 'none';
+    divSaved.style.display = 'none';
+    divTagged.style.display = 'flex';
+});
 
 function heart() {
     document.querySelector('a.white-heart').style.display = 'none';

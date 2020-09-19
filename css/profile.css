@@ -161,10 +161,12 @@ div.header {
             padding: 8px 16px;
             cursor: pointer;
             z-index: 20; }
+            div.header div.wrapper div.buttons div.profile div.profile-edit button:hover {
+              background-color: #fcf9f9; }
             div.header div.wrapper div.buttons div.profile div.profile-edit button:focus {
               outline: none; }
-            div.header div.wrapper div.buttons div.profile div.profile-edit button:nth-child(4) {
-              margin-bottom: 4px; }
+            div.header div.wrapper div.buttons div.profile div.profile-edit button.setting {
+              height: 41px; }
             div.header div.wrapper div.buttons div.profile div.profile-edit button svg {
               width: 16px;
               height: 16px; }
@@ -172,7 +174,7 @@ div.header {
               margin-left: 14px; }
           div.header div.wrapper div.buttons div.profile div.profile-edit button.logout {
             border-top: 1px solid #dbdbdb;
-            margin-bottom: 4px; }
+            height: 41px; }
 
 div.header-line {
   width: 100%;
@@ -303,17 +305,25 @@ div.content {
         height: 52px;
         align-items: center;
         justify-content: center;
-        border-top: solid 1px #000000;
         margin-left: 30px;
         margin-right: 30px;
         padding-bottom: 1px;
         cursor: pointer; }
+        div.content div.wrapper .tag div.active {
+          border-top: solid 1px #000000; }
+          div.content div.wrapper .tag div.active svg {
+            fill: #262626; }
+          div.content div.wrapper .tag div.active span {
+            font-family: 'nsL';
+            color: #262626; }
         div.content div.wrapper .tag div svg {
           width: 12px;
           height: 12px;
-          fill: #262626; }
+          fill: #8e8e8e; }
         div.content div.wrapper .tag div span {
           font-size: 12px;
+          font-family: 'nsL';
+          color: #8e8e8e;
           margin-left: 6px; }
     div.content div.wrapper div.like-comment {
       display: grid;
@@ -380,7 +390,7 @@ div.posts {
       top: 0px;
       left: 0px; }
 
-div.IGTV {
+div.igtv {
   display: none;
   width: 266px;
   height: 220px;
@@ -390,14 +400,14 @@ div.IGTV {
   margin: 60px 294px 44px 294px;
   padding-right: 44px;
   padding-left: 44px; }
-  div.IGTV p:nth-child(2) {
+  div.igtv p:nth-child(2) {
     font-size: 30px;
     font-family: 'nsL';
     margin-top: 24px; }
-  div.IGTV p:nth-child(3) {
+  div.igtv p:nth-child(3) {
     font-size: 14px;
     margin-top: 12px; }
-  div.IGTV button {
+  div.igtv button {
     width: 94px;
     height: 30px;
     color: #ffffff;
