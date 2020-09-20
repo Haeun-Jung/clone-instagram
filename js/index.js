@@ -219,12 +219,12 @@ document.querySelector('div.post-menu').addEventListener('click', function (e) {
 
 // 포스트 댓글 focus할 때 신고버튼 보이기
 function showReport(target) {
-    target.querySelector('a.option').style.display = 'flex';
+    target.querySelector('button.option').style.display = 'flex';
 }
 
 // 포스트 댓글 focus out할 때 신고버튼 안보이기
 function hideReport(target) {
-    target.querySelector('a.option').style.display = 'none';
+    target.querySelector('button.option').style.display = 'none';
 }
 
 // 포스트 댓글에 신고버튼
@@ -241,6 +241,7 @@ document.querySelector('div.comment-report').addEventListener('click', function 
     document.querySelector('div.comment-report').style.display = 'none';
 });
 
+//post에서 사진클릭시 좋아요 적용
 function dblClickLike() {
     document.querySelector('div.heart-wrapper').style.display = 'flex';
     setTimeout(function () {
@@ -267,9 +268,20 @@ function searchFocusOut() {
     search.style.marginLeft = '3px';
 }
 
+// post 댓글 좋아요 적용
 const hearts = document.querySelectorAll('svg.heart');
 for (let heart of hearts) {
     heart.addEventListener('click', function (e) {
         this.classList.toggle('active');
     });
 }
+
+// post 댓글버튼 누르면 textarea에 초점
+document.querySelector('button.comment').addEventListener('click', function (e) {
+    document.querySelector('div.comment-wrapper > textarea').focus();
+});
+
+// post 저장버튼
+document.querySelectorAll('button.save').addEventListener('click', function (e) {
+    document.querySelectorAll('button.save').style.fill = '#ffffff';
+});

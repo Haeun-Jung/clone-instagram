@@ -440,18 +440,27 @@ div.modal-post {
                                 a.id {
                                     font-size: 12px;
                                     font-family: 'nsM';
+                                    padding-right: 4px;
                                     cursor: pointer;
+                                }
+
+                                p.comment {
+                                    font-size: 14px;
+                                    font-family: 'nsL';
+                                    padding-right: 34px;
                                 }
 
                                 p {
                                     font-size: 14px;
                                     font-family: 'nsL';
+                                    padding-right: 4px;
                                 }
 
                                 a.tag {
                                     font-size: 14px;
                                     font-family: 'nsL';
                                     color: #00376b;
+                                    background-color: #ffffff;
                                     cursor: pointer;
                                 }
                             }
@@ -498,15 +507,18 @@ div.modal-post {
                                 cursor: pointer;
                             }
 
-                            a.option {
+                            button.option {
                                 display: none;
                                 position: absolute;
-                                width: 16px;
-                                height: 16px;
-                                top: 18px;
-                                right: 38px;
+                                width: 22px;
+                                height: 22px;
+                                top: -4px;
+                                right: 32px;
                                 font-family: 'nsB';
                                 color: #8e8e8e;
+                                background-color: #ffffff;
+                                padding: 4px;
+                                outline: none;
                                 cursor: pointer;
                             }
 
@@ -515,7 +527,7 @@ div.modal-post {
                                 position: absolute;
                                 width: 14px;
                                 height: 12px;
-                                top: 30px;
+                                top: 8px;
                                 right: 10px;
                                 fill: #ffffff;
                                 stroke: #000000;
