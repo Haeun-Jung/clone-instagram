@@ -832,6 +832,93 @@ div.modal-story {
     }
 }
 
+div.modal-direct {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    cursor: pointer;
+
+    div.wrapper {
+        display: flex;
+        width: 400px;
+        max-height: 400px;
+        background-color: #ffffff;
+        border-radius: 12px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        div.title {
+            display: flex;
+            position: relative;
+            width: 100%;
+            height: 43px;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid #dbdbdb;
+
+            span {
+                width: 352px;
+                font-size: 16px;
+                font-family: 'nsM';
+                text-align: center;
+            }
+
+            svg {
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                right: 14px;
+                fill: #262626;
+            }
+        }
+
+        div {
+            padding: 8px 0px 8px 0px;
+
+            button {
+                display: flex;
+                width: 400px;
+                min-height: 48px;
+                font-size: 14px;
+                line-height: 1.5px;
+                text-align: left;
+                background-color: transparent;
+                align-items: center;
+                padding: 8px 16px;
+                cursor: pointer;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:hover {
+                    background-color: #fcf9f9;
+                }
+
+                &:nth-child(1) {
+                    border-top: none;
+                }
+
+                &:nth-child(7) {
+                    font-family: 'nsM';
+                    padding-left: 56px;
+                }
+
+                span {
+                    font-family: 'nsM';
+                    padding-left: 12px;
+                }
+            }
+        }
+    }
+}
+
 @font-face {
     font-family: 'nsB';
     src: url('../font/NotoSansKR-Bold.otf');

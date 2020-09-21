@@ -285,3 +285,13 @@ document.querySelector('button.comment').addEventListener('click', function (e) 
 document.querySelectorAll('button.save').addEventListener('click', function (e) {
     document.querySelectorAll('button.save').style.fill = '#ffffff';
 });
+
+// 프로필 setting
+function direct() {
+    document.querySelector('div.modal-direct').style.display = 'flex';
+}
+
+// 프로필 setting 함수
+function cancel() {
+    document.querySelector('div.modal-direct').style.display = 'none';
+}

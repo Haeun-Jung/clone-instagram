@@ -665,6 +665,70 @@ div.modal-story {
       right: -46px;
       cursor: pointer; }
 
+div.modal-direct {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  cursor: pointer; }
+  div.modal-direct div.wrapper {
+    display: flex;
+    width: 400px;
+    max-height: 400px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    div.modal-direct div.wrapper div.title {
+      display: flex;
+      position: relative;
+      width: 100%;
+      height: 43px;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid #dbdbdb; }
+      div.modal-direct div.wrapper div.title span {
+        width: 352px;
+        font-size: 16px;
+        font-family: 'nsM';
+        text-align: center; }
+      div.modal-direct div.wrapper div.title svg {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        right: 14px;
+        fill: #262626; }
+    div.modal-direct div.wrapper div {
+      padding: 8px 0px 8px 0px; }
+      div.modal-direct div.wrapper div button {
+        display: flex;
+        width: 400px;
+        min-height: 48px;
+        font-size: 14px;
+        line-height: 1.5px;
+        text-align: left;
+        background-color: transparent;
+        align-items: center;
+        padding: 8px 16px;
+        cursor: pointer; }
+        div.modal-direct div.wrapper div button:focus {
+          outline: none; }
+        div.modal-direct div.wrapper div button:hover {
+          background-color: #fcf9f9; }
+        div.modal-direct div.wrapper div button:nth-child(1) {
+          border-top: none; }
+        div.modal-direct div.wrapper div button:nth-child(7) {
+          font-family: 'nsM';
+          padding-left: 56px; }
+        div.modal-direct div.wrapper div button span {
+          font-family: 'nsM';
+          padding-left: 12px; }
+
 @font-face {
   font-family: 'nsB';
   src: url("../font/NotoSansKR-Bold.otf"); }
