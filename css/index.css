@@ -453,9 +453,14 @@ div.modal-post {
             margin-right: 14px;
             outline: none;
             cursor: pointer; }
+            div.modal-post div.wrapper div.post-content div.rest div.buttons button svg.like-yes {
+              display: none;
+              fill: #ed4956; }
           div.modal-post div.wrapper div.post-content div.rest div.buttons button.save {
             margin-right: 6px;
             outline: none; }
+            div.modal-post div.wrapper div.post-content div.rest div.buttons button.save svg.save-yes {
+              display: none; }
         div.modal-post div.wrapper div.post-content div.rest button.likes-count {
           background-color: transparent;
           font-family: 'nsM';

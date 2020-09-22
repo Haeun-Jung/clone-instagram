@@ -244,6 +244,8 @@ document.querySelector('div.comment-report').addEventListener('click', function 
 //post에서 사진클릭시 좋아요 적용
 function dblClickLike() {
     document.querySelector('div.heart-wrapper').style.display = 'flex';
+    document.querySelector('svg.like-no').style.display = 'none';
+    document.querySelector('svg.like-yes').style.display = 'flex';
     setTimeout(function () {
         document.querySelector('div.heart-wrapper').style.display = 'none';
     }, 1500);
@@ -281,17 +283,44 @@ document.querySelector('button.comment').addEventListener('click', function (e) 
     document.querySelector('div.comment-wrapper > textarea').focus();
 });
 
-// post 저장버튼
-document.querySelectorAll('button.save').addEventListener('click', function (e) {
-    document.querySelectorAll('button.save').style.fill = '#ffffff';
+//  post 좋아요 버튼
+document.querySelector('svg.like-no').addEventListener('click', function (e) {
+    document.querySelector('svg.like-no').style.display = 'none';
+    document.querySelector('svg.like-yes').style.display = 'flex';
 });
 
-// 프로필 setting
+// post 좋아요취소 버튼
+document.querySelector('svg.like-yes').addEventListener('click', function (e) {
+    document.querySelector('svg.like-yes').style.display = 'none';
+    document.querySelector('svg.like-no').style.display = 'flex';
+});
+
+// post 저장 버튼
+document.querySelector('svg.save-no').addEventListener('click', function (e) {
+    document.querySelector('svg.save-no').style.display = 'none';
+    document.querySelector('svg.save-yes').style.display = 'flex';
+});
+
+// post 저장취소 버튼
+document.querySelector('svg.save-yes').addEventListener('click', function (e) {
+    document.querySelector('svg.save-yes').style.display = 'none';
+    document.querySelector('svg.save-no').style.display = 'flex';
+});
+
+// post direct 팝업
 function direct() {
     document.querySelector('div.modal-direct').style.display = 'flex';
 }
 
-// 프로필 setting 함수
+// post direct 팝업 취소버튼
 function cancel() {
     document.querySelector('div.modal-direct').style.display = 'none';
 }
+
+// // post direct 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
+document.querySelector('div.modal-direct').addEventListener('click', function (e) {
+    if (e.target !== this) {
+        return; // 현재 함수 빠져나가기
+    }
+    document.querySelector('div.modal-direct').style.display = 'none';
+});
