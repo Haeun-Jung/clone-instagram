@@ -32,44 +32,52 @@ div.header {
         padding: 10px 0px;
 
         img.logo {
-            margin: 15px 0px;
+            margin: 14px 0px 2px 0px;
         }
 
         span {
             font-size: 18px;
             font-family: 'nsM';
-
             color: #8e8e8e;
             background-color: #ffffff;
         }
 
         div {
+            margin-top: 16px;
+            margin-bottom: 8px;
+
             button.facebook {
                 img {
                     position: absolute;
-                    width: 16px;
-                    height: 16px;
+                    width: 20px;
+                    height: 18px;
                     top: 7px;
-                    left: 62px;
+                    left: 58px;
                 }
 
                 position: relative;
                 width: 280px;
                 height: 30px;
-                font-size: 12px;
+                font-size: 13px;
                 font-family: 'nsM';
                 color: #ffffff;
                 background-color: #2e9afe;
                 border-color: #2e9afe;
                 border-radius: 4px;
+                padding-left: 8px;
                 cursor: pointer;
             }
         }
 
         p.line {
             font-size: 14px;
-            color: #8e8e8e;
+            color: #cccaca;
             margin: 8px 0px;
+
+            span {
+                font-size: 14px;
+                color: #6b6a6a;
+            }
         }
 
         div.input {
@@ -106,10 +114,10 @@ div.header {
             font-size: 14px;
             font-family: 'nsM';
             color: #ffffff;
-            background-color: #2e9afe;
-            border-color: #2e9afe;
+            background-color: #b3dffc;
+            border-color: #b3dffc;
             border-radius: 4px;
-            margin: 10px 0px;
+            margin: 10px 0px 6px 0px;
             cursor: pointer;
 
             &:focus {
@@ -119,10 +127,16 @@ div.header {
 
         p.agree {
             font-size: 12px;
-            font-weight: bold;
+            font-family: 'nsL';
             text-align: center;
             color: #8e8e8e;
             margin: 10px 0px;
+
+            span {
+                font-size: 12px;
+                font-family: 'nsM';
+                cursor: pointer;
+            }
         }
     }
     div.login {

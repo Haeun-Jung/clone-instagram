@@ -183,7 +183,6 @@ document.querySelector('div.story-report').addEventListener('click', function (e
     if (e.target !== this) {
         return; // 현재 함수 빠져나가기
     }
-    console.log(e.target);
     document.querySelector('div.story-report').style.display = 'none';
 });
 
@@ -206,6 +205,7 @@ function cancel() {
     document.querySelector('div.post-menu').style.display = 'none';
     document.querySelector('div.comment-report').style.display = 'none';
     document.querySelector('div.story-report').style.display = 'none';
+    document.querySelector('div.modal-direct').style.display = 'none';
 }
 
 // 포스트 메뉴 부분에서 다른부분을 눌렀을 시에 메뉴 화면 가리기
@@ -310,11 +310,6 @@ document.querySelector('svg.save-yes').addEventListener('click', function (e) {
 // post direct 팝업
 function direct() {
     document.querySelector('div.modal-direct').style.display = 'flex';
-}
-
-// post direct 팝업 취소버튼
-function cancel() {
-    document.querySelector('div.modal-direct').style.display = 'none';
 }
 
 // // post direct 팝업에서 다른부분을 눌렀을 시에 팝업 가리기

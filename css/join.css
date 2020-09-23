@@ -28,33 +28,40 @@ div.header {
     margin-bottom: 20px;
     padding: 10px 0px; }
     div.header div.wrapper img.logo {
-      margin: 15px 0px; }
+      margin: 14px 0px 2px 0px; }
     div.header div.wrapper span {
       font-size: 18px;
       font-family: 'nsM';
       color: #8e8e8e;
       background-color: #ffffff; }
-    div.header div.wrapper div button.facebook {
-      position: relative;
-      width: 280px;
-      height: 30px;
-      font-size: 12px;
-      font-family: 'nsM';
-      color: #ffffff;
-      background-color: #2e9afe;
-      border-color: #2e9afe;
-      border-radius: 4px;
-      cursor: pointer; }
-      div.header div.wrapper div button.facebook img {
-        position: absolute;
-        width: 16px;
-        height: 16px;
-        top: 7px;
-        left: 62px; }
+    div.header div.wrapper div {
+      margin-top: 16px;
+      margin-bottom: 8px; }
+      div.header div.wrapper div button.facebook {
+        position: relative;
+        width: 280px;
+        height: 30px;
+        font-size: 13px;
+        font-family: 'nsM';
+        color: #ffffff;
+        background-color: #2e9afe;
+        border-color: #2e9afe;
+        border-radius: 4px;
+        padding-left: 8px;
+        cursor: pointer; }
+        div.header div.wrapper div button.facebook img {
+          position: absolute;
+          width: 20px;
+          height: 18px;
+          top: 7px;
+          left: 58px; }
     div.header div.wrapper p.line {
       font-size: 14px;
-      color: #8e8e8e;
+      color: #cccaca;
       margin: 8px 0px; }
+      div.header div.wrapper p.line span {
+        font-size: 14px;
+        color: #6b6a6a; }
     div.header div.wrapper div.input {
       display: flex;
       flex-direction: column;
@@ -81,19 +88,23 @@ div.header {
       font-size: 14px;
       font-family: 'nsM';
       color: #ffffff;
-      background-color: #2e9afe;
-      border-color: #2e9afe;
+      background-color: #b3dffc;
+      border-color: #b3dffc;
       border-radius: 4px;
-      margin: 10px 0px;
+      margin: 10px 0px 6px 0px;
       cursor: pointer; }
       div.header div.wrapper button.join:focus {
         outline: none; }
     div.header div.wrapper p.agree {
       font-size: 12px;
-      font-weight: bold;
+      font-family: 'nsL';
       text-align: center;
       color: #8e8e8e;
       margin: 10px 0px; }
+      div.header div.wrapper p.agree span {
+        font-size: 12px;
+        font-family: 'nsM';
+        cursor: pointer; }
   div.header div.login {
     display: flex;
     width: 360px;
