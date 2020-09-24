@@ -658,6 +658,22 @@ div.modal-story {
     flex: 1;
     align-items: center;
     margin-bottom: 14px; }
+    div.modal-story div.story-content:hover a.previous {
+      position: absolute;
+      top: 45%;
+      left: -30px;
+      font-size: 24px;
+      font-family: 'nsB';
+      color: #ffffff;
+      cursor: pointer; }
+    div.modal-story div.story-content:hover a.next {
+      position: absolute;
+      top: 45%;
+      right: -30px;
+      font-size: 24px;
+      font-family: 'nsB';
+      color: #ffffff;
+      cursor: pointer; }
     div.modal-story div.story-content img#story {
       width: 100%;
       height: 100%;

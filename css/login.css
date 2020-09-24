@@ -44,7 +44,7 @@ div.header {
         outline: none; }
       div.header div.wrapper input:hover {
         font-size: 10px; }
-    div.header div.wrapper button {
+    div.header div.wrapper button#login-btn {
       width: 280px;
       height: 34px;
       font-family: 'nsM';
@@ -54,7 +54,7 @@ div.header {
       border-radius: 4px;
       margin: 10px 0px;
       cursor: pointer; }
-      div.header div.wrapper button:focus {
+      div.header div.wrapper button#login-btn:focus {
         outline: none; }
     div.header div.wrapper p.line {
       font-size: 14px;

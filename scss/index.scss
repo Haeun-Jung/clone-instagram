@@ -824,6 +824,28 @@ div.modal-story {
         align-items: center;
         margin-bottom: 14px;
 
+        &:hover {
+            a.previous {
+                position: absolute;
+                top: 45%;
+                left: -30px;
+                font-size: 24px;
+                font-family: 'nsB';
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            a.next {
+                position: absolute;
+                top: 45%;
+                right: -30px;
+                font-size: 24px;
+                font-family: 'nsB';
+                color: #ffffff;
+                cursor: pointer;
+            }
+        }
+
         img#story {
             width: 100%;
             height: 100%;
