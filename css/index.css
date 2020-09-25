@@ -610,81 +610,92 @@ div.modal-story {
   align-items: center;
   justify-content: center;
   z-index: 1; }
-  div.modal-story div.header {
+  div.modal-story div.wrapper {
     display: flex;
     position: relative;
-    width: 466px;
-    justify-content: flex-start;
-    padding-top: 26px; }
-    div.modal-story div.header img#profile {
-      width: 34px;
-      height: 34px;
-      border-radius: 17px;
-      cursor: pointer; }
-    div.modal-story div.header p.text {
-      font-size: 14px;
-      font-family: 'nsL';
-      color: #ffffff;
-      margin-top: -22px;
-      margin-left: 14px;
-      cursor: pointer; }
-    div.modal-story div.header p.time {
-      font-size: 14px;
-      font-family: 'nsL';
-      color: #b6b3b3;
-      margin-top: -22px;
-      margin-left: 10px; }
-    div.modal-story div.header p.user {
-      position: absolute;
-      left: 48px;
-      top: 52px;
-      font-size: 11px;
-      font-family: 'nsL';
-      color: #ffffff;
-      cursor: pointer; }
-    div.modal-story div.header a.declaration {
-      color: #ffffff;
-      cursor: pointer; }
-  div.modal-story div.header-line {
-    width: 466px;
-    height: 1px;
-    background-color: #ffffff;
-    margin: 12px 0px; }
-  div.modal-story div.story-content {
-    display: flex;
-    position: relative;
-    width: 466px;
-    background-color: #000000;
-    flex: 1;
-    align-items: center;
-    margin-bottom: 14px; }
-    div.modal-story div.story-content:hover a.previous {
+    width: 540px;
+    height: 100%;
+    flex-direction: column; }
+    div.modal-story div.wrapper a.previous,
+    div.modal-story div.wrapper a.next {
+      display: none; }
+    div.modal-story div.wrapper:hover a.previous {
+      display: flex;
       position: absolute;
       top: 45%;
-      left: -30px;
+      left: -36px;
       font-size: 24px;
       font-family: 'nsB';
       color: #ffffff;
       cursor: pointer; }
-    div.modal-story div.story-content:hover a.next {
+    div.modal-story div.wrapper:hover a.next {
+      display: flex;
       position: absolute;
       top: 45%;
-      right: -30px;
+      right: -36px;
       font-size: 24px;
       font-family: 'nsB';
       color: #ffffff;
       cursor: pointer; }
-    div.modal-story div.story-content img#story {
-      width: 100%;
-      height: 100%;
-      object-fit: contain; }
-    div.modal-story div.story-content svg.story-close {
-      position: absolute;
-      width: 24px;
-      height: 24px;
-      top: 8px;
-      right: -46px;
-      cursor: pointer; }
+    div.modal-story div.wrapper div.header {
+      display: flex;
+      position: relative;
+      width: 466px;
+      justify-content: flex-start;
+      padding-top: 26px; }
+      div.modal-story div.wrapper div.header img#profile {
+        width: 34px;
+        height: 34px;
+        border-radius: 17px;
+        cursor: pointer; }
+      div.modal-story div.wrapper div.header p.text {
+        font-size: 14px;
+        font-family: 'nsL';
+        color: #ffffff;
+        margin-top: -22px;
+        margin-left: 14px;
+        cursor: pointer; }
+      div.modal-story div.wrapper div.header p.time {
+        font-size: 14px;
+        font-family: 'nsL';
+        color: #b6b3b3;
+        margin-top: -22px;
+        margin-left: 10px; }
+      div.modal-story div.wrapper div.header p.user {
+        position: absolute;
+        left: 48px;
+        top: 52px;
+        font-size: 11px;
+        font-family: 'nsL';
+        color: #ffffff;
+        cursor: pointer; }
+      div.modal-story div.wrapper div.header a.declaration {
+        color: #ffffff;
+        cursor: pointer; }
+    div.modal-story div.wrapper div.header-line {
+      width: 466px;
+      height: 1px;
+      background-color: #ffffff;
+      margin: 12px 0px; }
+    div.modal-story div.wrapper div.story-content {
+      display: flex;
+      position: relative;
+      width: 466px;
+      background-color: #000000;
+      flex: 1;
+      align-items: center;
+      margin-bottom: 14px; }
+      div.modal-story div.wrapper div.story-content img#story {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; }
+      div.modal-story div.wrapper div.story-content svg.story-close {
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        right: -46px;
+        cursor: pointer; }
 
 div.modal-direct {
   display: none;

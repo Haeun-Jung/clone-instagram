@@ -761,74 +761,24 @@ div.modal-story {
     justify-content: center;
     z-index: 1;
 
-    div.header {
+    div.wrapper {
         display: flex;
         position: relative;
-        width: 466px;
-        justify-content: flex-start;
-        padding-top: 26px;
+        width: 540px;
+        height: 100%;
+        flex-direction: column;
 
-        img#profile {
-            width: 34px;
-            height: 34px;
-            border-radius: 17px;
-            cursor: pointer;
+        a.previous,
+        a.next {
+            display: none;
         }
-
-        p.text {
-            font-size: 14px;
-            font-family: 'nsL';
-            color: #ffffff;
-            margin-top: -22px;
-            margin-left: 14px;
-            cursor: pointer;
-        }
-
-        p.time {
-            font-size: 14px;
-            font-family: 'nsL';
-            color: #b6b3b3;
-            margin-top: -22px;
-            margin-left: 10px;
-        }
-
-        p.user {
-            position: absolute;
-            left: 48px;
-            top: 52px;
-            font-size: 11px;
-            font-family: 'nsL';
-            color: #ffffff;
-            cursor: pointer;
-        }
-
-        a.declaration {
-            color: #ffffff;
-            cursor: pointer;
-        }
-    }
-
-    div.header-line {
-        width: 466px;
-        height: 1px;
-        background-color: #ffffff;
-        margin: 12px 0px;
-    }
-
-    div.story-content {
-        display: flex;
-        position: relative;
-        width: 466px;
-        background-color: #000000;
-        flex: 1;
-        align-items: center;
-        margin-bottom: 14px;
 
         &:hover {
             a.previous {
+                display: flex;
                 position: absolute;
                 top: 45%;
-                left: -30px;
+                left: -36px;
                 font-size: 24px;
                 font-family: 'nsB';
                 color: #ffffff;
@@ -836,9 +786,10 @@ div.modal-story {
             }
 
             a.next {
+                display: flex;
                 position: absolute;
                 top: 45%;
-                right: -30px;
+                right: -36px;
                 font-size: 24px;
                 font-family: 'nsB';
                 color: #ffffff;
@@ -846,19 +797,83 @@ div.modal-story {
             }
         }
 
-        img#story {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        div.header {
+            display: flex;
+            position: relative;
+            width: 466px;
+            justify-content: flex-start;
+            padding-top: 26px;
+
+            img#profile {
+                width: 34px;
+                height: 34px;
+                border-radius: 17px;
+                cursor: pointer;
+            }
+
+            p.text {
+                font-size: 14px;
+                font-family: 'nsL';
+                color: #ffffff;
+                margin-top: -22px;
+                margin-left: 14px;
+                cursor: pointer;
+            }
+
+            p.time {
+                font-size: 14px;
+                font-family: 'nsL';
+                color: #b6b3b3;
+                margin-top: -22px;
+                margin-left: 10px;
+            }
+
+            p.user {
+                position: absolute;
+                left: 48px;
+                top: 52px;
+                font-size: 11px;
+                font-family: 'nsL';
+                color: #ffffff;
+                cursor: pointer;
+            }
+
+            a.declaration {
+                color: #ffffff;
+                cursor: pointer;
+            }
         }
 
-        svg.story-close {
-            position: absolute;
-            width: 24px;
-            height: 24px;
-            top: 8px;
-            right: -46px;
-            cursor: pointer;
+        div.header-line {
+            width: 466px;
+            height: 1px;
+            background-color: #ffffff;
+            margin: 12px 0px;
+        }
+
+        div.story-content {
+            display: flex;
+            position: relative;
+            width: 466px;
+            background-color: #000000;
+            flex: 1;
+            align-items: center;
+            margin-bottom: 14px;
+
+            img#story {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            svg.story-close {
+                position: absolute;
+                width: 24px;
+                height: 24px;
+                top: 8px;
+                right: -46px;
+                cursor: pointer;
+            }
         }
     }
 }
