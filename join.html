@@ -20,12 +20,12 @@
                 </div>
                 <p class="line">──────── <span>&nbsp또는&nbsp</span> ────────</p>
                 <div class="input">
-                    <input placeholder="휴대폰 번호 또는 이메일 주소" />
-                    <input placeholder="성명" />
-                    <input placeholder="사용자 이름" />
-                    <input placeholder="비밀번호" />
+                    <input id="id" onkeydown="loginId()" placeholder="휴대폰 번호 또는 이메일 주소" />
+                    <input id="name" onkeydown="loginName()" placeholder="성명" />
+                    <input id="user" onkeydown="loginUser()" placeholder="사용자 이름" />
+                    <input id="password" onkeydown="loginPassword()" placeholder="비밀번호" type="password" />
                 </div>
-                <button class="join">가입</button>
+                <button id="join-btn">가입</button>
                 <p class="agree">
                     가입하면 Instagram의 <span>약관</span>, <span>데이터 정책</span> 및 <span>쿠키</span><br /><span>정책</span
                     >에 동의하게 됩니다.

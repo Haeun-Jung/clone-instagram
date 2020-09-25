@@ -82,7 +82,7 @@ div.header {
           outline: none; }
         div.header div.wrapper div.input input:hover {
           font-size: 10px; }
-    div.header div.wrapper button.join {
+    div.header div.wrapper button#join-btn {
       width: 280px;
       height: 30px;
       font-size: 14px;
@@ -93,7 +93,7 @@ div.header {
       border-radius: 4px;
       margin: 10px 0px 6px 0px;
       cursor: pointer; }
-      div.header div.wrapper button.join:focus {
+      div.header div.wrapper button#join-btn:focus {
         outline: none; }
     div.header div.wrapper p.agree {
       font-size: 12px;
