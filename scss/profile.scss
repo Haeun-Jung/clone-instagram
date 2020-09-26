@@ -35,7 +35,11 @@ div.header {
         box-sizing: border-box;
         padding: 12px 0px;
 
-        img.logo {
+        div.logo {
+            background-image: url('../img/icon.png');
+            background-position: -122px -226px;
+            width: 103px;
+            height: 29px;
             cursor: pointer;
         }
 
@@ -56,14 +60,14 @@ div.header {
                 }
             }
 
-            img.search-icon {
+            div.search-icon {
                 position: absolute;
-                width: 14px;
-                height: 14px;
-                left: 68px;
+                background-image: url('../img/icon.png');
+                background-position: -399px -321px;
+                width: 10px;
+                height: 10px;
                 top: 8px;
-                -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
-                filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
+                left: 70px;
             }
         }
 
@@ -130,6 +134,13 @@ div.header {
                     justify-content: center;
                     flex-direction: column;
                     z-index: 20;
+
+                    div#heart-image {
+                        background-image: url('../img/icon.png');
+                        background-position: -306px -132px;
+                        height: 62px;
+                        width: 62px;
+                    }
 
                     a.activity {
                         width: 500px;
@@ -570,6 +581,13 @@ div.saved {
     flex-direction: column;
     margin: 60px 294px 44px 294px;
 
+    div#save {
+        background-image: url('../img/icon.png');
+        background-position: -192px -269px;
+        width: 62px;
+        height: 62px;
+    }
+
     span {
         font-size: 30px;
         font-family: 'nsL';
@@ -590,6 +608,13 @@ div.tagged {
     justify-content: center;
     flex-direction: column;
     margin: 60px 44px 60px 44px;
+
+    div#tag {
+        background-image: url('../img/icon.png');
+        background-position: -256px -269px;
+        width: 62px;
+        height: 62px;
+    }
 
     span {
         font-size: 30px;

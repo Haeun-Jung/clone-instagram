@@ -10,11 +10,11 @@
     <body>
         <div class="header">
             <div class="wrapper">
-                <img class="logo" src="img/Instagram.PNG" onClick="refreshPage()" />
+                <div class="logo" onClick="refreshPage()"></div>
                 <div class="blank"></div>
                 <div>
                     <input type="text" class="search" placeholder="검색" />
-                    <img class="search-icon" src="img/search.png" />
+                    <div class="search-icon"></div>
                 </div>
                 <div class="blank"></div>
                 <div class="buttons">
@@ -32,7 +32,7 @@
                         <div class="bg"></div>
                         <div class="tail"></div>
                         <div>
-                            <img src="img/heart.png" />
+                            <div id="heart-image"></div>
                             <a class="activity">게시물 활동</a>
                             <a class="activity">다른 사람이 회원님의 게시물을 좋아하거나 댓글을 남기면 여기에 표시됩니다.</a>
                         </div>
@@ -132,14 +132,14 @@
                     <button>업로드</button>
                 </div>
                 <div class="saved">
-                    <img src="img/saved.png" />
+                    <div id="save"></div>
                     <span>저장</span>
                     <p>다시 보고 싶은 사진과 동영상을 저장하세요. 콘텐츠를</p>
                     <p>저장해도 다른 사람에게 알림이 전송되지 않으며, 저장된</p>
                     <p>콘텐츠는 회원님만 볼 수 있습니다.</p>
                 </div>
                 <div class="tagged">
-                    <img src="img/tagged.png" />
+                    <div id="tag"></div>
                     <span>내가 나온 사진</span>
                     <p>사람들이 회원님을 사진에 태그하면 태그된 사진이 여기</p>
                     <p>에 표시됩니다.</p>

@@ -57,14 +57,14 @@ div.header {
           outline: none; }
         div.header div.wrapper div input.search:focus::placeholder {
           text-align: left; }
-      div.header div.wrapper div img.search-icon {
+      div.header div.wrapper div div.search-icon {
         position: absolute;
-        width: 12px;
-        height: 12px;
+        background-image: url("../img/icon.png");
+        background-position: -399px -321px;
+        width: 10px;
+        height: 10px;
         top: 8px;
-        left: 68px;
-        -webkit-filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6);
-        filter: opacity(0.5) drop-shadow(0 0 0 #e6e6e6); }
+        left: 70px; }
       div.header div.wrapper div a.search-cancel {
         display: none;
         position: absolute;
@@ -511,21 +511,23 @@ div.modal-post {
             margin-top: -4px;
             outline: none;
             cursor: pointer; }
-    div.modal-post div.wrapper a.previous {
+    div.modal-post div.wrapper div.previous {
       position: absolute;
+      background-image: url("../img/icon.png");
+      background-position: -186px -136px;
+      width: 30px;
+      height: 30px;
       top: 290px;
       left: -30px;
-      font-size: 24px;
-      font-family: 'nsB';
-      color: #ffffff;
       cursor: pointer; }
-    div.modal-post div.wrapper a.next {
+    div.modal-post div.wrapper div.next {
       position: absolute;
+      background-image: url("../img/icon.png");
+      background-position: -260px -190px;
+      width: 30px;
+      height: 30px;
       top: 290px;
       right: -30px;
-      font-size: 24px;
-      font-family: 'nsB';
-      color: #ffffff;
       cursor: pointer; }
 
 div.post-menu {

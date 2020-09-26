@@ -23,7 +23,7 @@ div.header {
     div.wrapper {
         display: flex;
         width: 360px;
-        height: 500px;
+        height: 510px;
         background-color: #ffffff;
         border: 1px solid #e6e6e6;
         flex-direction: column;
@@ -31,8 +31,12 @@ div.header {
         margin-bottom: 20px;
         padding: 10px 0px;
 
-        img.logo {
-            margin: 14px 0px 2px 0px;
+        div.logo {
+            background-image: url('../img/icon.png');
+            background-position: 0px -127px;
+            width: 178px;
+            height: 56px;
+            margin: 16px 0px 10px 0px;
         }
 
         span {

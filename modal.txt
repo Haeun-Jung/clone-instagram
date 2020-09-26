@@ -116,8 +116,8 @@
                 </div>
             </div>
         </div>
-        <a class="previous"></a>
-        <a class="next"></a>
+        <div class="previous"></div>
+        <div class="next"></div>
     </div>
 </div>
 <!-- 포스트 메뉴 모달 -->
