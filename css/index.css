@@ -32,7 +32,11 @@ div.header {
     box-sizing: border-box;
     align-items: center;
     justify-content: center; }
-    div.header div.wrapper img.logo {
+    div.header div.wrapper div.logo {
+      background-image: url("../img/icon.png");
+      background-position: -122px -226px;
+      width: 103px;
+      height: 29px;
       cursor: pointer; }
     div.header div.wrapper div {
       position: relative; }
@@ -261,12 +265,11 @@ div.modal-post {
         align-items: center;
         justify-content: center;
         text-align: center; }
-        div.modal-post div.wrapper div.image div.heart-wrapper span.heart {
+        div.modal-post div.wrapper div.image div.heart-wrapper div.heart {
           position: absolute;
-          font-size: 120px;
-          text-align: center;
-          color: #ffffff;
-          animation: infinite alternate; }
+          background-image: url("../img/icon.png");
+          width: 120px;
+          height: 120px; }
     div.modal-post div.wrapper div.post-content {
       display: flex;
       height: 100%;
@@ -613,29 +616,31 @@ div.modal-story {
   div.modal-story div.wrapper {
     display: flex;
     position: relative;
-    width: 540px;
+    width: 560px;
     height: 100%;
+    align-items: center;
     flex-direction: column; }
-    div.modal-story div.wrapper a.previous,
-    div.modal-story div.wrapper a.next {
-      display: none; }
-    div.modal-story div.wrapper:hover a.previous {
+    div.modal-story div.wrapper div.previous,
+    div.modal-story div.wrapper div.next {
+      display: none;
+      background-image: url("../img/icon.png"); }
+    div.modal-story div.wrapper:hover div.previous {
       display: flex;
       position: absolute;
+      width: 30px;
+      height: 30px;
       top: 45%;
-      left: -36px;
-      font-size: 24px;
-      font-family: 'nsB';
-      color: #ffffff;
+      left: -44px;
+      background-position: -130px -98px;
       cursor: pointer; }
-    div.modal-story div.wrapper:hover a.next {
+    div.modal-story div.wrapper:hover div.next {
       display: flex;
       position: absolute;
+      width: 30px;
+      height: 30px;
       top: 45%;
-      right: -36px;
-      font-size: 24px;
-      font-family: 'nsB';
-      color: #ffffff;
+      right: -44px;
+      background-position: -162px -98px;
       cursor: pointer; }
     div.modal-story div.wrapper div.header {
       display: flex;

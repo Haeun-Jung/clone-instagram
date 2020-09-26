@@ -49,11 +49,13 @@ div.header {
         border-radius: 4px;
         padding-left: 8px;
         cursor: pointer; }
-        div.header div.wrapper div button.facebook img {
+        div.header div.wrapper div button.facebook div#facebook {
+          background-image: url("../img/icon.png");
+          background-position: -412px 102px;
           position: absolute;
-          width: 20px;
+          width: 18px;
           height: 18px;
-          top: 7px;
+          top: -10px;
           left: 58px; }
     div.header div.wrapper p.line {
       font-size: 14px;

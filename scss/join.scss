@@ -47,11 +47,13 @@ div.header {
             margin-bottom: 8px;
 
             button.facebook {
-                img {
+                div#facebook {
+                    background-image: url('../img/icon.png');
+                    background-position: -412px 102px;
                     position: absolute;
-                    width: 20px;
+                    width: 18px;
                     height: 18px;
-                    top: 7px;
+                    top: -10px;
                     left: 58px;
                 }
 

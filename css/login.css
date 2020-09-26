@@ -64,7 +64,9 @@ div.header {
       display: flex;
       align-items: center;
       justify-content: center; }
-      div.header div.wrapper div img#facebook {
+      div.header div.wrapper div div#facebook {
+        background-image: url("../img/icon.png");
+        background-position: -412px 143px;
         width: 18px;
         height: 18px;
         margin-right: 6px; }

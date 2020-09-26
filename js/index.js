@@ -37,6 +37,98 @@ window.onload = function () {
             handleScrollDown();
         }
     });
+
+    includeModal(function () {
+        // 포스트 부분에서 다른부분을 눌렀을 시에 포스트 화면 가리기
+        document.querySelector('div.modal-post').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            console.log(e.target);
+            document.querySelector('div.modal-post').style.display = 'none';
+        });
+        // post에서 X부분 눌러야 나가짐
+        document.querySelector('svg.post-close').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            console.log(e.target);
+            document.querySelector('div.modal-post').style.display = 'none';
+        });
+
+        // 스토리에서 X부분 눌러야 나가짐
+        document.querySelector('svg.story-close').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            console.log(e.target);
+            document.querySelector('div.modal-story').style.display = 'none';
+            document.querySelector('div.hashtag>img').style.borderColor = '#e8e8e8';
+        });
+
+        // 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+        document.querySelector('div.story-report').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            document.querySelector('div.story-report').style.display = 'none';
+        });
+
+        // 포스트 메뉴 부분에서 다른부분을 눌렀을 시에 메뉴 화면 가리기
+        document.querySelector('div.post-menu').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            console.log(e.target);
+            document.querySelector('div.post-menu').style.display = 'none';
+        });
+
+        // 포스트 댓글에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
+        document.querySelector('div.comment-report').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            console.log(e.target);
+            document.querySelector('div.comment-report').style.display = 'none';
+        });
+
+        // post 댓글버튼 누르면 textarea에 초점
+        document.querySelector('button.comment').addEventListener('click', function (e) {
+            document.querySelector('div.comment-wrapper > textarea').focus();
+        });
+
+        //  post 좋아요 버튼
+        document.querySelector('svg.like-no').addEventListener('click', function (e) {
+            document.querySelector('svg.like-no').style.display = 'none';
+            document.querySelector('svg.like-yes').style.display = 'flex';
+        });
+
+        // post 좋아요취소 버튼
+        document.querySelector('svg.like-yes').addEventListener('click', function (e) {
+            document.querySelector('svg.like-yes').style.display = 'none';
+            document.querySelector('svg.like-no').style.display = 'flex';
+        });
+
+        // post 저장 버튼
+        document.querySelector('svg.save-no').addEventListener('click', function (e) {
+            document.querySelector('svg.save-no').style.display = 'none';
+            document.querySelector('svg.save-yes').style.display = 'flex';
+        });
+
+        // post 저장취소 버튼
+        document.querySelector('svg.save-yes').addEventListener('click', function (e) {
+            document.querySelector('svg.save-yes').style.display = 'none';
+            document.querySelector('svg.save-no').style.display = 'flex';
+        });
+
+        // post direct 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
+        document.querySelector('div.modal-direct').addEventListener('click', function (e) {
+            if (e.target !== this) {
+                return; // 현재 함수 빠져나가기
+            }
+            document.querySelector('div.modal-direct').style.display = 'none';
+        });
+    });
 };
 
 function handleScrollDown() {
@@ -73,7 +165,7 @@ function showPopularImage(res) {
     let html = '';
     for (let i = 0; i < res.length; i++) {
         const id = res[i].id;
-        const url = res[i].url;
+        const url = res[i].url.thumb;
         const likes = res[i].number.likes;
         const comments = res[i].number.comments;
         html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
@@ -100,7 +192,7 @@ function showRecentImage(res) {
     let html = '';
     for (let i = 0; i < res.results.length; i++) {
         const id = res.results[i].id;
-        const url = res.results[i].url;
+        const url = res.results[i].url.thumb;
         const likes = res.results[i].number.likes;
         const comments = res.results[i].number.comments;
         html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
@@ -140,51 +232,10 @@ function hideLikeComment(target) {
     target.querySelector('div.numbers').style.display = 'none';
 }
 
-// 포스트 부분에서 다른부분을 눌렀을 시에 포스트 화면 가리기
-document.querySelector('div.modal-post').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.modal-post').style.display = 'none';
-});
-
-// post에서 X부분 눌러야 나가짐
-document.querySelector('svg.post-close').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.modal-post').style.display = 'none';
-});
-
 // 스토리 보기
 function goToStory() {
     document.querySelector('div.modal-story').style.display = 'flex';
 }
-
-// 스토리에서 X부분 눌러야 나가짐
-document.querySelector('svg.story-close').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.modal-story').style.display = 'none';
-    document.querySelector('div.hashtag>img').style.borderColor = '#e8e8e8';
-});
-
-// 스토리에 신고버튼
-function storyReport() {
-    document.querySelector('div.story-report').style.display = 'flex';
-}
-
-// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
-document.querySelector('div.story-report').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    document.querySelector('div.story-report').style.display = 'none';
-});
 
 // 팔로우버튼
 function follow() {
@@ -208,14 +259,10 @@ function cancel() {
     document.querySelector('div.modal-direct').style.display = 'none';
 }
 
-// 포스트 메뉴 부분에서 다른부분을 눌렀을 시에 메뉴 화면 가리기
-document.querySelector('div.post-menu').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.post-menu').style.display = 'none';
-});
+// 스토리에 신고버튼
+function storyReport() {
+    document.querySelector('div.story-report').style.display = 'flex';
+}
 
 // 포스트 댓글 focus할 때 신고버튼 보이기
 function showReport(target) {
@@ -231,15 +278,6 @@ function hideReport(target) {
 function commentReport() {
     document.querySelector('div.comment-report').style.display = 'flex';
 }
-
-// 포스트 댓글에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
-document.querySelector('div.comment-report').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.comment-report').style.display = 'none';
-});
 
 //post에서 사진클릭시 좋아요 적용
 function dblClickLike() {
@@ -278,44 +316,7 @@ for (let heart of hearts) {
     });
 }
 
-// post 댓글버튼 누르면 textarea에 초점
-document.querySelector('button.comment').addEventListener('click', function (e) {
-    document.querySelector('div.comment-wrapper > textarea').focus();
-});
-
-//  post 좋아요 버튼
-document.querySelector('svg.like-no').addEventListener('click', function (e) {
-    document.querySelector('svg.like-no').style.display = 'none';
-    document.querySelector('svg.like-yes').style.display = 'flex';
-});
-
-// post 좋아요취소 버튼
-document.querySelector('svg.like-yes').addEventListener('click', function (e) {
-    document.querySelector('svg.like-yes').style.display = 'none';
-    document.querySelector('svg.like-no').style.display = 'flex';
-});
-
-// post 저장 버튼
-document.querySelector('svg.save-no').addEventListener('click', function (e) {
-    document.querySelector('svg.save-no').style.display = 'none';
-    document.querySelector('svg.save-yes').style.display = 'flex';
-});
-
-// post 저장취소 버튼
-document.querySelector('svg.save-yes').addEventListener('click', function (e) {
-    document.querySelector('svg.save-yes').style.display = 'none';
-    document.querySelector('svg.save-no').style.display = 'flex';
-});
-
 // post direct 팝업
 function direct() {
     document.querySelector('div.modal-direct').style.display = 'flex';
 }
-
-// // post direct 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
-document.querySelector('div.modal-direct').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    document.querySelector('div.modal-direct').style.display = 'none';
-});

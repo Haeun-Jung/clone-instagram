@@ -37,7 +37,11 @@ div.header {
         align-items: center;
         justify-content: center;
 
-        img.logo {
+        div.logo {
+            background-image: url('../img/icon.png');
+            background-position: -122px -226px;
+            width: 103px;
+            height: 29px;
             cursor: pointer;
         }
 
@@ -340,12 +344,11 @@ div.modal-post {
                 justify-content: center;
                 text-align: center;
 
-                span.heart {
+                div.heart {
                     position: absolute;
-                    font-size: 120px;
-                    text-align: center;
-                    color: #ffffff;
-                    animation: infinite alternate;
+                    background-image: url('../img/icon.png');
+                    width: 120px;
+                    height: 120px;
                 }
             }
         }
@@ -764,35 +767,37 @@ div.modal-story {
     div.wrapper {
         display: flex;
         position: relative;
-        width: 540px;
+        width: 560px;
         height: 100%;
+        align-items: center;
         flex-direction: column;
 
-        a.previous,
-        a.next {
+        div.previous,
+        div.next {
             display: none;
+            background-image: url('../img/icon.png');
         }
 
         &:hover {
-            a.previous {
+            div.previous {
                 display: flex;
                 position: absolute;
+                width: 30px;
+                height: 30px;
                 top: 45%;
-                left: -36px;
-                font-size: 24px;
-                font-family: 'nsB';
-                color: #ffffff;
+                left: -44px;
+                background-position: -130px -98px;
                 cursor: pointer;
             }
 
-            a.next {
+            div.next {
                 display: flex;
                 position: absolute;
+                width: 30px;
+                height: 30px;
                 top: 45%;
-                right: -36px;
-                font-size: 24px;
-                font-family: 'nsB';
-                color: #ffffff;
+                right: -44px;
+                background-position: -162px -98px;
                 cursor: pointer;
             }
         }
