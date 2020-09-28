@@ -525,22 +525,25 @@ div.modal-post {
                                 cursor: pointer;
                             }
 
-                            svg.heart {
+                            svg.heart-no {
                                 display: flex;
                                 position: absolute;
                                 width: 14px;
                                 height: 12px;
                                 top: 8px;
                                 right: 10px;
-                                fill: #ffffff;
-                                stroke: #000000;
-                                stroke-width: 2px;
                                 cursor: pointer;
+                            }
 
-                                &.active {
-                                    fill: #ed4956;
-                                    stroke: #ed4956;
-                                }
+                            svg.heart-yes {
+                                display: none;
+                                position: absolute;
+                                width: 14px;
+                                height: 12px;
+                                top: 8px;
+                                right: 10px;
+                                fill: #ed4956;
+                                cursor: pointer;
                             }
                         }
                     }

@@ -424,24 +424,27 @@ div.modal-post {
                 padding: 4px;
                 outline: none;
                 cursor: pointer; }
-              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting svg.heart,
-              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting svg.heart,
-              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting svg.heart {
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting svg.heart-no,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting svg.heart-no,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting svg.heart-no {
                 display: flex;
                 position: absolute;
                 width: 14px;
                 height: 12px;
                 top: 8px;
                 right: 10px;
-                fill: #ffffff;
-                stroke: #000000;
-                stroke-width: 2px;
                 cursor: pointer; }
-                div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting svg.heart.active,
-                div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting svg.heart.active,
-                div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting svg.heart.active {
-                  fill: #ed4956;
-                  stroke: #ed4956; }
+              div.modal-post div.wrapper div.post-content div.rest div.text div.top div.posting svg.heart-yes,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.center div.posting svg.heart-yes,
+              div.modal-post div.wrapper div.post-content div.rest div.text div.bottom div.posting svg.heart-yes {
+                display: none;
+                position: absolute;
+                width: 14px;
+                height: 12px;
+                top: 8px;
+                right: 10px;
+                fill: #ed4956;
+                cursor: pointer; }
           div.modal-post div.wrapper div.post-content div.rest div.text div.center {
             flex: 1; }
         div.modal-post div.wrapper div.post-content div.rest div.buttons {

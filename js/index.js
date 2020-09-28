@@ -279,6 +279,18 @@ function commentReport() {
     document.querySelector('div.comment-report').style.display = 'flex';
 }
 
+//  post 댓글 좋아요 버튼
+function heartNo(target) {
+    document.querySelector('svg.heart-no').style.display = 'none';
+    document.querySelector('svg.heart-yes').style.display = 'flex';
+}
+
+// post 댓글 좋아요 취소 버튼
+function heartYes(target) {
+    document.querySelector('svg.heart-yes').style.display = 'none';
+    document.querySelector('svg.heart-no').style.display = 'flex';
+}
+
 //post에서 사진클릭시 좋아요 적용
 function dblClickLike() {
     document.querySelector('div.heart-wrapper').style.display = 'flex';
