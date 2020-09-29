@@ -281,7 +281,10 @@ function commentReport() {
 
 //  post 댓글 좋아요 버튼
 function heartNo(target) {
+    // heartNO 함수를 실행하는 요소의 스타일을 변경
     target.style.display = 'none';
+    // heartNO 함수를 실행하는 요소의 다음, 다음요소의 스타일을 변경
+    // sibiling이지만 자식요소도 선택되므로 두번넘겨 다음 svg요소를 찾는다
     target.nextSibling.nextSibling.style.display = 'flex';
 }
 
@@ -318,14 +321,6 @@ function searchFocusOut() {
     search.style.textSize = '8px';
     search.style.color = '#d4d4d4';
     search.style.marginLeft = '3px';
-}
-
-// post 댓글 좋아요 적용
-const hearts = document.querySelectorAll('svg.heart');
-for (let heart of hearts) {
-    heart.addEventListener('click', function (e) {
-        this.classList.toggle('active');
-    });
 }
 
 // post direct 팝업

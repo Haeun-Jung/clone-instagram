@@ -206,6 +206,7 @@ document.querySelector('div.profile-edit').addEventListener('click', function (e
     }
 });
 
+// 태그 버튼에 따라 화면 바꾸기
 const btnPosts = document.querySelector('div.btn-posts');
 const btnIgtv = document.querySelector('div.btn-igtv');
 const btnSaved = document.querySelector('div.btn-saved');
