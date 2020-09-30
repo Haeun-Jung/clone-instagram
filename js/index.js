@@ -309,14 +309,16 @@ function searchCancel() {
 }
 
 function searchFocus() {
-    document.querySelector('img.search-icon').style.left = '10px';
-    document.querySelector('a.search-cancel').style.display = 'flex';
+    document.querySelector('div.search-icon').style.left = '10px';
+    document.querySelector('div.search-cancel').style.display = 'flex';
 }
 
 function searchFocusOut() {
     const search = document.querySelector('input.search');
-    document.querySelector('img.search-icon').style.left = '68px';
-    document.querySelector('a.search-cancel').style.display = 'none';
+    const a = 40 - search.value.length;
+    console.log(a);
+    document.querySelector('div.search-icon').style.left = a + 'px';
+    document.querySelector('div.search-cancel').style.display = 'none';
     search.style.textAlign = 'center';
     search.style.textSize = '8px';
     search.style.color = '#d4d4d4';

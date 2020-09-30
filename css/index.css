@@ -65,17 +65,15 @@ div.header {
         height: 10px;
         top: 8px;
         left: 70px; }
-      div.header div.wrapper div a.search-cancel {
+      div.header div.wrapper div div.search-cancel {
         display: none;
         position: absolute;
+        background-image: url("../img/icon.png");
+        background-position: -321px -336px;
         width: 14px;
         height: 14px;
         top: 6px;
         right: 8px;
-        font-size: 12px;
-        color: #ffffff;
-        background-color: #b8b6b6;
-        border-radius: 50%;
         align-items: center;
         justify-content: center;
         box-sizing: border-box;
