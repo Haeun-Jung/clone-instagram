@@ -171,11 +171,11 @@ function showPopularImage(res) {
         html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
         html += `<div class="numbers">`;
         html += `<div class="wrapper">`;
-        html += `<img />`;
+        html += `<div class="likes-icon"></div>`;
         html += `<span>${likes}</span>`;
         html += `</div>`; // end of wrapper
         html += `<div class="wrapper">`;
-        html += `<img />`;
+        html += `<div class="comments-icon"></div>`;
         html += `<span>${comments}</span>`;
         html += `</div>`; // end of wrapper
         html += `</div>`; // end of numbers
