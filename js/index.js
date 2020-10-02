@@ -243,6 +243,7 @@ function follow() {
     btn.innerText = btn.innerText === '팔로우' ? '팔로잉' : '팔로우';
     // btn.classList.add('active');
     // btn.classList.remove('active');
+    // 두가지 상태로 변할수있게 지정
     btn.classList.toggle('active');
 }
 
@@ -294,11 +295,12 @@ function heartYes(target) {
     target.previousSibling.previousSibling.style.display = 'flex';
 }
 
-//post에서 사진클릭시 좋아요 적용
+//post에서 사진더블클릭시 좋아요 적용
 function dblClickLike() {
     document.querySelector('div.heart-wrapper').style.display = 'flex';
     document.querySelector('svg.like-no').style.display = 'none';
     document.querySelector('svg.like-yes').style.display = 'flex';
+    // 일정시간 후에 하트 없어짐
     setTimeout(function () {
         document.querySelector('div.heart-wrapper').style.display = 'none';
     }, 1500);
