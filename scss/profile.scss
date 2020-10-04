@@ -549,6 +549,13 @@ div.igtv {
     padding-right: 44px;
     padding-left: 44px;
 
+    div#igtv {
+        background-image: url('../img/icon3.png');
+        background-position: -50px -424px;
+        width: 62px;
+        height: 62px;
+    }
+
     p {
         &:nth-child(2) {
             font-size: 30px;
