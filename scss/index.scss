@@ -941,7 +941,7 @@ div.modal-direct {
             }
         }
 
-        div {
+        div.frame {
             padding: 8px 0px 8px 0px;
 
             button {
@@ -955,6 +955,13 @@ div.modal-direct {
                 align-items: center;
                 padding: 8px 16px;
                 cursor: pointer;
+
+                div.direct {
+                    background-image: url('../img/icon-two.png');
+                    background-position: -52px -370px;
+                    width: 24px;
+                    height: 24px;
+                }
 
                 &:focus {
                     outline: none;

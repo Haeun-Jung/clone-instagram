@@ -750,9 +750,9 @@ div.modal-direct {
         height: 24px;
         right: 14px;
         fill: #262626; }
-    div.modal-direct div.wrapper div {
+    div.modal-direct div.wrapper div.frame {
       padding: 8px 0px 8px 0px; }
-      div.modal-direct div.wrapper div button {
+      div.modal-direct div.wrapper div.frame button {
         display: flex;
         width: 400px;
         min-height: 48px;
@@ -763,16 +763,21 @@ div.modal-direct {
         align-items: center;
         padding: 8px 16px;
         cursor: pointer; }
-        div.modal-direct div.wrapper div button:focus {
+        div.modal-direct div.wrapper div.frame button div.direct {
+          background-image: url("../img/icon-two.png");
+          background-position: -52px -370px;
+          width: 24px;
+          height: 24px; }
+        div.modal-direct div.wrapper div.frame button:focus {
           outline: none; }
-        div.modal-direct div.wrapper div button:hover {
+        div.modal-direct div.wrapper div.frame button:hover {
           background-color: #fcf9f9; }
-        div.modal-direct div.wrapper div button:nth-child(1) {
+        div.modal-direct div.wrapper div.frame button:nth-child(1) {
           border-top: none; }
-        div.modal-direct div.wrapper div button:nth-child(7) {
+        div.modal-direct div.wrapper div.frame button:nth-child(7) {
           font-family: 'nsM';
           padding-left: 56px; }
-        div.modal-direct div.wrapper div button span {
+        div.modal-direct div.wrapper div.frame button span {
           font-family: 'nsM';
           padding-left: 12px; }
 
