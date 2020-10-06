@@ -182,7 +182,7 @@
         </div>
         <div class="frame">
             <button><div class="direct"></div><span>Direct에 공유</span></button>
-            <button><img src="img/modal-facebook.png" /><span>Facebook에 공유</span</button>
+            <button><div class="facebook"></div><span>Facebook에 공유</span></button>
             <button><img src="img/modal-messenger.png" /><span>Messenger에 공유</span</button>
             <button><img src="img/modal-twitter.png" /><span>Twitter에 공유</span</button>
             <button><img src="img/modal-email.png" /><span>이메일로 공유</span</button>
