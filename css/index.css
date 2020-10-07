@@ -773,6 +773,11 @@ div.modal-direct {
           background-position: -182px -370px;
           width: 24px;
           height: 24px; }
+        div.modal-direct div.wrapper div.frame button div.messenger {
+          background-image: url("../img/icon-two.png");
+          background-position: -346px -298px;
+          width: 24px;
+          height: 24px; }
         div.modal-direct div.wrapper div.frame button:focus {
           outline: none; }
         div.modal-direct div.wrapper div.frame button:hover {
