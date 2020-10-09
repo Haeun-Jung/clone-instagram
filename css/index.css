@@ -778,6 +778,11 @@ div.modal-direct {
           background-position: -346px -298px;
           width: 24px;
           height: 24px; }
+        div.modal-direct div.wrapper div.frame button div.twitter {
+          background-image: url("../img/icon-two.png");
+          background-position: -372px -298px;
+          width: 24px;
+          height: 24px; }
         div.modal-direct div.wrapper div.frame button:focus {
           outline: none; }
         div.modal-direct div.wrapper div.frame button:hover {
