@@ -788,6 +788,11 @@ div.modal-direct {
           background-position: -130px -396px;
           width: 24px;
           height: 24px; }
+        div.modal-direct div.wrapper div.frame button div.link {
+          background-image: url("../img/icon-two.png");
+          background-position: -52px -396px;
+          width: 24px;
+          height: 24px; }
         div.modal-direct div.wrapper div.frame button:focus {
           outline: none; }
         div.modal-direct div.wrapper div.frame button:hover {
