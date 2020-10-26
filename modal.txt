@@ -12,7 +12,7 @@
         <div class="post-content">
             <div class="user">
                 <img src="img/ppukku4.jpg" />
-                <a>ppukku_world</a>
+                <a onclick="location.href='profile.html'">ppukku_world</a>
                 <span>ㆍ</span>
                 <button class="follow">팔로우</button>
                 <div class="blank"></div>
@@ -25,7 +25,7 @@
                         <div class="posting">
                             <div>
                                 <p class="comment">
-                                    <a class="id">ppukku_world</a>우리 뿌꾸 이뻐죽겠지 않아요???^0^/// 뿌꾸의 더 많은
+                                    <a class="id" onclick="location.href='profile.html'">ppukku_world</a>우리 뿌꾸 이뻐죽겠지 않아요???^0^/// 뿌꾸의 더 많은
                                     모습을 보고 싶다면?!?!!
                                 </p>
                                 <a class="tag">#뿌꾸</a>
