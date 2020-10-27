@@ -121,6 +121,11 @@ window.onload = function () {
             document.querySelector('svg.save-no').style.display = 'flex';
         });
 
+        // post textarea입력시 게시 버튼 색 변경
+        if (document.querySelector('textarea').value !== '') {
+            document.querySelector('button.submit').style.color = '#57B9F9';
+        }
+
         // post direct 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
         document.querySelector('div.modal-direct').addEventListener('click', function (e) {
             if (e.target !== this) {
