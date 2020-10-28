@@ -9,6 +9,13 @@ html {
     height: 100%;
 }
 
+head {
+    link#favicon {
+        background-image: url('../img/icon.png');
+        background-position: -122px -226px;
+    }
+}
+
 body {
     display: flex;
     width: 100%;
