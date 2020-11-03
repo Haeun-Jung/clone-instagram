@@ -181,9 +181,15 @@ div.content {
             margin-left: 50px;
 
             div.keyword {
-                font-size: 28px;
-                font-family: 'nsL';
-                margin-bottom: 12px;
+                span {
+                    font-size: 28px;
+                    font-family: 'nsL';
+                    margin-bottom: 4px;
+
+                    &:nth-child(1) {
+                        font-size: 26px;
+                    }
+                }
             }
 
             div.count {

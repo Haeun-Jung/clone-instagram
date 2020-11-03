@@ -141,10 +141,12 @@ div.content {
       flex-direction: column;
       justify-content: center;
       margin-left: 50px; }
-      div.content div.hashtag div.result div.keyword {
+      div.content div.hashtag div.result div.keyword span {
         font-size: 28px;
         font-family: 'nsL';
-        margin-bottom: 12px; }
+        margin-bottom: 4px; }
+        div.content div.hashtag div.result div.keyword span:nth-child(1) {
+          font-size: 26px; }
       div.content div.hashtag div.result div.count {
         margin-bottom: 28px; }
         div.content div.hashtag div.result div.count span:nth-child(1) {
