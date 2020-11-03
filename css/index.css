@@ -124,16 +124,15 @@ div.content {
     display: flex;
     width: 935px;
     height: 240px;
+    align-items: center;
     padding-top: 30px;
     padding-bottom: 30px;
     box-sizing: border-box; }
     div.content div.hashtag img#main-image {
       width: 150px;
       height: 150px;
-      background: var(--c, linear-gradient(to right, #9c20aa, #fb3570));
-      -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--b) - 1px), #fff calc(100% - var(--b)));
       border-radius: 50%;
-      padding: 6px;
+      padding: 6px 6px 6px 0px;
       cursor: pointer; }
     div.content div.hashtag div.result {
       display: flex;
@@ -153,7 +152,7 @@ div.content {
         div.content div.hashtag div.result div.count span:nth-child(2) {
           font-family: 'nsM'; }
       div.content div.hashtag div.result button.follow {
-        width: 127px;
+        width: 120px;
         font-size: 14px;
         line-height: 18px;
         font-family: 'nsM';
