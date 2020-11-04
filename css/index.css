@@ -45,8 +45,8 @@ div.header {
     div.header div.wrapper div {
       position: relative; }
       div.header div.wrapper div input.search {
-        width: 200px;
-        height: 26px;
+        width: 216px;
+        height: 28px;
         font-family: 'nsL';
         text-align: left;
         background-color: #fafafa;
@@ -67,8 +67,8 @@ div.header {
         background-position: -399px -321px;
         width: 10px;
         height: 10px;
-        top: 8px;
-        left: 70px; }
+        top: 9px;
+        left: 80px; }
       div.header div.wrapper div div.search-cancel {
         display: none;
         position: absolute;
