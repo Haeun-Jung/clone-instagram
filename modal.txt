@@ -113,7 +113,7 @@
                 <button class="likes-count">좋아요 1,351개</button>
                 <div class="post-date">2020년 6월 19일</div>
                 <div class="comment-wrapper">
-                    <textarea placeholder="댓글 달기..."></textarea>
+                    <textarea onkeydown="comment()"placeholder="댓글 달기..."></textarea>
                     <button class="submit">게시</button>
                 </div>
             </div>
