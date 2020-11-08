@@ -41,6 +41,7 @@ div.header {
       background-position: -122px -226px;
       width: 103px;
       height: 29px;
+      top: 4px;
       cursor: pointer; }
     div.header div.wrapper div {
       position: relative; }
