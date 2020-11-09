@@ -57,7 +57,8 @@ div.header {
         padding-left: 28px;
         padding-right: 28px; }
         div.header div.wrapper div input.search::placeholder {
-          text-align: center; }
+          text-align: center;
+          color: #8e8e8e; }
         div.header div.wrapper div input.search:focus {
           outline: none; }
         div.header div.wrapper div input.search:focus::placeholder {
@@ -124,11 +125,10 @@ div.content {
   div.content div.hashtag {
     display: flex;
     width: 935px;
-    height: 240px;
+    height: 150px;
     align-items: center;
     padding-top: 30px;
-    padding-bottom: 30px;
-    box-sizing: border-box; }
+    padding-bottom: 44px; }
     div.content div.hashtag img#main-image {
       width: 150px;
       height: 150px;

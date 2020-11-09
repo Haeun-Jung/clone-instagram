@@ -70,6 +70,7 @@ div.header {
 
                 &::placeholder {
                     text-align: center;
+                    color: #8e8e8e;
                 }
 
                 &:focus {
@@ -159,11 +160,10 @@ div.content {
     div.hashtag {
         display: flex;
         width: 935px;
-        height: 240px;
+        height: 150px;
         align-items: center;
         padding-top: 30px;
-        padding-bottom: 30px;
-        box-sizing: border-box;
+        padding-bottom: 44px;
 
         img#main-image {
             width: 150px;
