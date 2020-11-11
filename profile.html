@@ -6,6 +6,7 @@
         <title>강아지를 사랑하는 여자(@ppukku_world)ㆍInstagram 사진 및 동영상</title>
         <link rel="stylesheet" href="css/profile.css" />
         <link rel="stylesheet" href="css/index.css" />
+        <script defer src="js/index.js"></script>
         <script defer src="js/profile.js"></script>
     </head>
     <body>
@@ -14,8 +15,15 @@
                 <div class="logo" onClick="refreshPage()"></div>
                 <div class="blank"></div>
                 <div>
-                    <input type="text" class="search" placeholder="검색" />
+                    <input
+                        type="text"
+                        class="search"
+                        placeholder="검색"
+                        onfocus="searchFocus()"
+                        onfocusout="searchFocusOut()"
+                    />
                     <div class="search-icon"></div>
+                    <div class="search-cancel" onmousedown="searchCancel()"></div>
                 </div>
                 <div class="blank"></div>
                 <div class="buttons">

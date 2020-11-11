@@ -117,6 +117,27 @@ function showImage() {
     // wrapper.innerHTML += contents;
 }
 
+function searchCancel() {
+    document.querySelector('input.search').value = '';
+}
+
+function searchFocus() {
+    document.querySelector('div.search-icon').style.left = '10px';
+    document.querySelector('div.search-cancel').style.display = 'flex';
+}
+
+function searchFocusOut() {
+    const search = document.querySelector('input.search');
+    const a = 40 - search.value.length;
+    console.log(a);
+    document.querySelector('div.search-icon').style.left = a + 'px';
+    document.querySelector('div.search-cancel').style.display = 'none';
+    search.style.textAlign = 'center';
+    search.style.textSize = '8px';
+    search.style.color = '#d4d4d4';
+    search.style.marginLeft = '3px';
+}
+
 // 사진 눌렀을 때 포스트 보이기
 function goToPost(target) {
     const url = target.querySelector('img.post').getAttribute('src');
