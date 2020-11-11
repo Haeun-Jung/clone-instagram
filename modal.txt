@@ -125,10 +125,11 @@
 <!-- 포스트 메뉴 모달 -->
 <div class="post-menu">
     <div class="wrapper">
-        <button>부적절한 콘텐츠 신고</button>
+        <button>신고</button>
         <button>게시물로 이동</button>
-        <button>공유하기</button>
+        <button>Share to...</button>
         <button>링크 복사</button>
+         <button>퍼가기</button>
         <button onclick="cancel()">취소</button>
     </div>
 </div>
