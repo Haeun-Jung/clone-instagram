@@ -35,9 +35,10 @@ div.header {
       width: 103px;
       height: 29px;
       cursor: pointer; }
-    div.header div.wrapper div {
-      position: relative; }
-      div.header div.wrapper div input.search {
+    div.header div.wrapper div.search-frame {
+      position: relative;
+      right: 144px; }
+      div.header div.wrapper div.search-frame input.search {
         width: 200px;
         height: 26px;
         font-family: 'nsL';
@@ -45,9 +46,9 @@ div.header {
         background-color: #fafafa;
         border: 1px solid #e6e6e6;
         border-radius: 4px; }
-        div.header div.wrapper div input.search:focus {
+        div.header div.wrapper div.search-frame input.search:focus {
           outline: none; }
-      div.header div.wrapper div div.search-icon {
+      div.header div.wrapper div.search-frame div.search-icon {
         position: absolute;
         background-image: url("../img/icon.png");
         background-position: -399px -321px;

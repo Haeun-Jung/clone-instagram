@@ -43,8 +43,9 @@ div.header {
             cursor: pointer;
         }
 
-        div {
+        div.search-frame {
             position: relative;
+            right: 144px;
 
             input.search {
                 width: 200px;
