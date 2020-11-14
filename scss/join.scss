@@ -20,6 +20,13 @@ div.header {
     align-items: center;
     justify-content: center;
 
+    div.continue {
+        color: #989898;
+        font-family: 'nsM';
+        font-size: 14px;
+        padding-bottom: 6px;
+    }
+
     div.wrapper {
         display: flex;
         width: 360px;
