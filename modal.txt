@@ -172,7 +172,7 @@
 <div class="modal-direct">
     <div class="wrapper">
         <div class="title">
-            <span>공유</span>
+            <span>공유 대상...</span>
             <svg onclick="cancel()" fill="#262626" height="24" viewBox="0 0 48 48" width="24">
                 <path
                     clip-rule="evenodd"
