@@ -127,7 +127,7 @@
     <div class="wrapper">
         <button>신고</button>
         <button>게시물로 이동</button>
-        <button>Share to...</button>
+        <button>공유 대상...</button>
         <button>링크 복사</button>
          <button>퍼가기</button>
         <button onclick="cancel()">취소</button>
