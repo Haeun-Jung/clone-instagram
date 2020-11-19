@@ -317,7 +317,8 @@ div.modal-post {
         div.modal-post div.wrapper div.post-content div.user svg.etc {
           width: 16px;
           height: 16px;
-          fill: #262626; }
+          fill: #262626;
+          cursor: pointer; }
       div.modal-post div.wrapper div.post-content div.rest {
         display: flex;
         width: 100%;
