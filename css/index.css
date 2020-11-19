@@ -314,10 +314,10 @@ div.modal-post {
           background-color: transparent;
           outline: none;
           cursor: pointer; }
-        div.modal-post div.wrapper div.post-content div.user a.etc {
-          right: 0;
-          font-family: 'nsB';
-          cursor: pointer; }
+        div.modal-post div.wrapper div.post-content div.user svg.etc {
+          width: 16px;
+          height: 16px;
+          fill: #262626; }
       div.modal-post div.wrapper div.post-content div.rest {
         display: flex;
         width: 100%;
