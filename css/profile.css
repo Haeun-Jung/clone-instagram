@@ -175,7 +175,7 @@ div.header {
               background-color: #fcf9f9; }
             div.header div.wrapper div.buttons div.profile div.profile-edit button:focus {
               outline: none; }
-            div.header div.wrapper div.buttons div.profile div.profile-edit button.setting {
+            div.header div.wrapper div.buttons div.profile div.profile-edit button.account {
               height: 41px; }
             div.header div.wrapper div.buttons div.profile div.profile-edit button svg {
               width: 16px;
