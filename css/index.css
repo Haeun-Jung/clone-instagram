@@ -295,8 +295,8 @@ div.modal-post {
         box-sizing: border-box;
         padding: 20px 20px; }
         div.modal-post div.wrapper div.post-content div.user img {
-          width: 40px;
-          height: 40px;
+          width: 32px;
+          height: 32px;
           border-radius: 20px;
           cursor: pointer; }
         div.modal-post div.wrapper div.post-content div.user a {
