@@ -341,8 +341,8 @@ div.modal-post {
             div.modal-post div.wrapper div.post-content div.rest div.text div.top img,
             div.modal-post div.wrapper div.post-content div.rest div.text div.center img,
             div.modal-post div.wrapper div.post-content div.rest div.text div.bottom img {
-              width: 40px;
-              height: 40px;
+              width: 32px;
+              height: 32px;
               border-radius: 20px;
               margin-right: 12px;
               cursor: pointer; }
