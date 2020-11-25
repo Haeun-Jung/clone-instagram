@@ -39,13 +39,16 @@ div.header {
       position: relative;
       right: 144px; }
       div.header div.wrapper div.search-frame input.search {
-        width: 200px;
-        height: 26px;
+        width: 216px;
+        height: 28px;
         font-family: 'nsL';
         text-align: left;
         background-color: #fafafa;
         border: 1px solid #e6e6e6;
-        border-radius: 4px; }
+        border-radius: 4px;
+        box-sizing: border-box;
+        padding-left: 28px;
+        padding-right: 28px; }
         div.header div.wrapper div.search-frame input.search:focus {
           outline: none; }
       div.header div.wrapper div.search-frame div.search-icon {
