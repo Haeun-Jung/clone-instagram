@@ -306,6 +306,7 @@ function dblClickLike() {
     }, 1500);
 }
 
+// 검색창에서 x표시 누를 때 빈칸만들기
 function searchCancel() {
     document.querySelector('input.search').value = '';
 }
