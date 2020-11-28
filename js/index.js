@@ -311,6 +311,7 @@ function searchCancel() {
     document.querySelector('input.search').value = '';
 }
 
+// 검색창 focus 잡힐때
 function searchFocus() {
     document.querySelector('div.search-icon').style.left = '10px';
     document.querySelector('div.search-cancel').style.display = 'flex';
