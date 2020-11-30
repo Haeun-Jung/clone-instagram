@@ -317,6 +317,7 @@ function searchFocus() {
     document.querySelector('div.search-cancel').style.display = 'flex';
 }
 
+// 검색창 focus 초점을 벗어날 때
 function searchFocusOut() {
     const search = document.querySelector('input.search');
     const a = 40 - search.value.length;
