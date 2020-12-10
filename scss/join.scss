@@ -128,7 +128,7 @@ div.header {
             font-size: 14px;
             font-family: 'nsM';
             color: #ffffff;
-            background-color: #b3dffc;
+            background-color: #2e9afe;
             border-color: #b3dffc;
             border-radius: 4px;
             margin: 10px 0px 6px 0px;
@@ -136,6 +136,11 @@ div.header {
 
             &:focus {
                 outline: none;
+            }
+
+            &:disabled {
+                background-color: #b3dffc;
+                cursor: default;
             }
         }
 

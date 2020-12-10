@@ -100,13 +100,16 @@ div.header {
       font-size: 14px;
       font-family: 'nsM';
       color: #ffffff;
-      background-color: #b3dffc;
+      background-color: #2e9afe;
       border-color: #b3dffc;
       border-radius: 4px;
       margin: 10px 0px 6px 0px;
       cursor: pointer; }
       div.header div.wrapper button#join-btn:focus {
         outline: none; }
+      div.header div.wrapper button#join-btn:disabled {
+        background-color: #b3dffc;
+        cursor: default; }
     div.header div.wrapper p.agree {
       font-size: 12px;
       font-family: 'nsL';

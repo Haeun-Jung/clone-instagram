@@ -5,6 +5,7 @@
         <link rel="shortcut icon" type="image⁄x-icon" href="../img/instagram-favicon.ico" />
         <title>#강아지 해시태그ㆍInstagram 사진 및 동영상</title>
         <link rel="stylesheet" href="css/index.css" />
+        <link rel="stylesheet" href="css/modal.css" />
         <script defer src="js/util.js"></script>
         <script defer src="js/index.js"></script>
     </head>
@@ -13,7 +14,7 @@
             <div class="wrapper">
                 <div class="logo" onclick="location.reload();"></div>
                 <div class="blank"></div>
-                <div>
+                <div class="search-frame">
                     <input
                         type="text"
                         class="search"
@@ -25,8 +26,8 @@
                     <div class="search-cancel" onmousedown="searchCancel()"></div>
                 </div>
                 <div class="blank"></div>
-                <button class="login" onclick="location.href='login.html'">로그인</button>
-                <button class="join" onclick="location.href='join.html'">가입하기</button>
+                <button class="login" onclick="location.href='/login.html'">로그인</button>
+                <button class="join" onclick="location.href='/join.html'">가입하기</button>
             </div>
         </div>
         <div class="header-line"></div>
@@ -50,5 +51,6 @@
             <p class="title recent">최근 사진</p>
             <div id="recent" class="posts"></div>
         </div>
+        <!-- modal -->
     </body>
 </html>

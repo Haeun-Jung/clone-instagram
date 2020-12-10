@@ -3,15 +3,10 @@
   margin: 0px;
   padding: 0px; }
 
-html {
+html,
+body {
   width: 100%;
   height: 100%; }
-
-body {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column; }
 
 div.blank {
   flex: 1; }
@@ -37,7 +32,7 @@ div.header {
       cursor: pointer; }
     div.header div.wrapper div.search-frame {
       position: relative;
-      right: 144px; }
+      margin-left: 106px; }
       div.header div.wrapper div.search-frame input.search {
         width: 216px;
         height: 28px;
@@ -48,9 +43,18 @@ div.header {
         border-radius: 4px;
         box-sizing: border-box;
         padding-left: 28px;
-        padding-right: 28px; }
+        padding-right: 28px;
+        /* for dotdotdot */
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap; }
+        div.header div.wrapper div.search-frame input.search::placeholder {
+          text-align: center;
+          color: #8e8e8e; }
         div.header div.wrapper div.search-frame input.search:focus {
           outline: none; }
+        div.header div.wrapper div.search-frame input.search:focus::placeholder {
+          text-align: left; }
       div.header div.wrapper div.search-frame div.search-icon {
         position: absolute;
         background-image: url("../img/icon.png");
@@ -59,6 +63,20 @@ div.header {
         height: 10px;
         top: 9px;
         left: 80px; }
+      div.header div.wrapper div.search-frame div.search-cancel {
+        display: none;
+        position: absolute;
+        background-image: url("../img/icon.png");
+        background-position: -321px -336px;
+        width: 14px;
+        height: 14px;
+        top: 7px;
+        right: 8px;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        padding-bottom: 2px;
+        cursor: pointer; }
     div.header div.wrapper div.buttons {
       display: flex;
       align-items: center;
@@ -79,8 +97,7 @@ div.header {
         position: absolute;
         width: 510px;
         height: 240px;
-        top: 38px;
-        right: -14px;
+        top: 52px;
         background-color: #ffffff;
         box-shadow: 0px 0px 2px 2px #e8e8e8;
         border-radius: 8px;
@@ -136,7 +153,7 @@ div.header {
         div.header div.wrapper div.buttons div.profile div.profile-edit {
           position: absolute;
           width: 230px;
-          height: 157px;
+          height: 194px;
           top: 38px;
           right: -20px;
           align-items: center;
@@ -195,49 +212,45 @@ div.header-line {
   background-color: #e6e6e6; }
 
 div.content {
-  display: flex;
   width: 100%;
-  flex: 1;
+  height: calc(100% - 54px);
   background-color: #fafafa;
-  flex-direction: column;
-  align-items: center;
-  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: scroll; }
-  div.content div.wrapper {
+  div.content div.container {
     display: flex;
     width: 935px;
+    min-height: calc(100% - 161px);
     background-color: #fafafa;
     flex-direction: column;
     align-items: center;
-    margin: 0px 244px 30px 244px;
+    margin: 0px auto 30px auto;
     padding: 30px 20px 0px 20px; }
-    div.content div.wrapper div.user-profile {
+    div.content div.container div.user-profile {
       display: flex;
       width: 935px;
       justify-content: center;
       margin-bottom: 44px; }
-      div.content div.wrapper div.user-profile img {
+      div.content div.container div.user-profile img {
         display: flex;
         width: 150px;
         height: 150px;
-        border: 3px solid #d10123;
         border-radius: 50%;
         margin-left: 70px;
         margin-right: 66px;
         padding: 6px;
         cursor: pointer; }
-      div.content div.wrapper div.user-profile div.main_profile {
+      div.content div.container div.user-profile div.main_profile {
         display: flex;
         flex: 1;
         flex-direction: column;
         margin-left: 34px; }
-        div.content div.wrapper div.user-profile div.main_profile div.user-id {
+        div.content div.container div.user-profile div.main_profile div.user-id {
           display: flex;
           font-size: 28px;
           align-items: center;
           margin-bottom: 20px; }
-          div.content div.wrapper div.user-profile div.main_profile div.user-id button.edit {
+          div.content div.container div.user-profile div.main_profile div.user-id button.edit {
             font-family: 'nsM';
             background-color: #fafafa;
             border: 1px solid #dbdbdb;
@@ -247,73 +260,73 @@ div.content {
             padding: 5px 9px;
             outline: none;
             cursor: pointer; }
-          div.content div.wrapper div.user-profile div.main_profile div.user-id div.preference {
+          div.content div.container div.user-profile div.main_profile div.user-id div.preference {
             display: flex;
             width: 40px;
             height: 40px;
             align-items: center;
             justify-content: center;
             padding: 4px; }
-            div.content div.wrapper div.user-profile div.main_profile div.user-id div.preference svg {
+            div.content div.container div.user-profile div.main_profile div.user-id div.preference svg {
               width: 24px;
               height: 24px;
               fill: #262626;
               cursor: pointer; }
-        div.content div.wrapper div.user-profile div.main_profile div.count {
+        div.content div.container div.user-profile div.main_profile div.count {
           display: flex;
           height: fit-content;
           margin-bottom: 20px; }
-          div.content div.wrapper div.user-profile div.main_profile div.count div.post {
+          div.content div.container div.user-profile div.main_profile div.count div.post {
             display: flex;
             height: fit-content;
             align-items: center;
             margin-right: 40px; }
-            div.content div.wrapper div.user-profile div.main_profile div.count div.post a {
+            div.content div.container div.user-profile div.main_profile div.count div.post a {
               font-size: 16px; }
-            div.content div.wrapper div.user-profile div.main_profile div.count div.post span {
+            div.content div.container div.user-profile div.main_profile div.count div.post span {
               font-size: 14px;
               font-family: 'nsM'; }
-          div.content div.wrapper div.user-profile div.main_profile div.count .follower {
+          div.content div.container div.user-profile div.main_profile div.count .follower {
             display: flex;
             height: fit-content;
             align-items: center;
             margin-right: 40px;
             cursor: pointer; }
-            div.content div.wrapper div.user-profile div.main_profile div.count .follower a {
+            div.content div.container div.user-profile div.main_profile div.count .follower a {
               font-size: 16px; }
-            div.content div.wrapper div.user-profile div.main_profile div.count .follower span {
+            div.content div.container div.user-profile div.main_profile div.count .follower span {
               font-size: 14px;
               font-family: 'nsM'; }
-          div.content div.wrapper div.user-profile div.main_profile div.count .follow {
+          div.content div.container div.user-profile div.main_profile div.count .follow {
             display: flex;
             height: fit-content;
             align-items: center;
             cursor: pointer; }
-            div.content div.wrapper div.user-profile div.main_profile div.count .follow a {
+            div.content div.container div.user-profile div.main_profile div.count .follow a {
               font-size: 16px; }
-            div.content div.wrapper div.user-profile div.main_profile div.count .follow span {
+            div.content div.container div.user-profile div.main_profile div.count .follow span {
               font-size: 14px;
               font-family: 'nsM';
               cursor: pointer; }
-        div.content div.wrapper div.user-profile div.main_profile div.introduce {
+        div.content div.container div.user-profile div.main_profile div.introduce {
           line-height: 24px; }
-          div.content div.wrapper div.user-profile div.main_profile div.introduce h1 {
+          div.content div.container div.user-profile div.main_profile div.introduce h1 {
             font-size: 14px;
             font-family: 'nsM'; }
-          div.content div.wrapper div.user-profile div.main_profile div.introduce span {
+          div.content div.container div.user-profile div.main_profile div.introduce span {
             font-size: 14px; }
-            div.content div.wrapper div.user-profile div.main_profile div.introduce span a.hashtag {
+            div.content div.container div.user-profile div.main_profile div.introduce span a.hashtag {
               font-size: 14px;
               color: #00376b;
               cursor: pointer; }
-    div.content div.wrapper .tag {
+    div.content div.container div.tag {
       display: flex;
       width: 935px;
       height: 52px;
       border-top: 1px solid #e6e6e6;
       align-items: center;
       justify-content: center; }
-      div.content div.wrapper .tag div {
+      div.content div.container div.tag div.btn {
         display: flex;
         height: 52px;
         align-items: center;
@@ -322,23 +335,23 @@ div.content {
         margin-right: 30px;
         padding-bottom: 1px;
         cursor: pointer; }
-        div.content div.wrapper .tag div.active {
+        div.content div.container div.tag div.btn.active {
           border-top: solid 1px #000000; }
-          div.content div.wrapper .tag div.active svg {
+          div.content div.container div.tag div.btn.active svg {
             fill: #262626; }
-          div.content div.wrapper .tag div.active span {
+          div.content div.container div.tag div.btn.active span {
             font-family: 'nsL';
             color: #262626; }
-        div.content div.wrapper .tag div svg {
+        div.content div.container div.tag div.btn svg {
           width: 12px;
           height: 12px;
           fill: #8e8e8e; }
-        div.content div.wrapper .tag div span {
+        div.content div.container div.tag div.btn span {
           font-size: 12px;
           font-family: 'nsL';
           color: #8e8e8e;
           margin-left: 6px; }
-    div.content div.wrapper div.like-comment {
+    div.content div.container div.like-comment {
       display: grid;
       position: relative;
       align-items: center;
@@ -347,168 +360,173 @@ div.content {
       grid-template-columns: repeat(3, 1fr);
       /* 1fr 1fr 1fr */
       grid-gap: 28px; }
-      div.content div.wrapper div.like-comment span.like-comment {
+      div.content div.container div.like-comment span.like-comment {
         display: none;
         position: absolute;
         top: 100px;
         left: 100px;
         color: #ffffff;
         background-color: rgba(0, 0, 0, 0.1); }
-
-div.posts {
-  display: grid;
-  position: relative;
-  width: 935px;
-  align-items: center;
-  justify-content: center;
-  padding-top: 8px;
-  grid-template-columns: repeat(3, 1fr);
-  /* 1fr 1fr 1fr */
-  grid-gap: 28px; }
-  div.posts div.image-container {
-    position: relative;
-    width: 293px;
-    height: 293px;
-    cursor: pointer; }
-    div.posts div.image-container div.numbers {
-      display: none;
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0px;
-      left: 0px;
-      background-color: rgba(0, 0, 0, 0.3);
+    div.content div.container div.posts {
+      display: grid;
+      position: relative;
+      width: 935px;
       align-items: center;
       justify-content: center;
-      z-index: 1; }
-      div.posts div.image-container div.numbers div.wrapper {
-        display: flex;
-        align-items: center; }
-        div.posts div.image-container div.numbers div.wrapper img {
-          width: 20px;
-          height: 20px;
-          background-color: #ffffff;
-          border-radius: 10px;
-          margin-right: 8px; }
-        div.posts div.image-container div.numbers div.wrapper span {
-          font-size: 16px;
-          font-family: 'nsL';
-          color: #ffffff; }
-        div.posts div.image-container div.numbers div.wrapper:nth-child(1) {
-          margin-right: 24px; }
-    div.posts div.image-container img.post {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0px;
-      left: 0px; }
-
-div.igtv {
-  display: none;
-  width: 266px;
-  height: 220px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 60px 294px 44px 294px;
-  padding-right: 44px;
-  padding-left: 44px; }
-  div.igtv div#igtv {
-    background-image: url("../img/icon3.png");
-    background-position: -50px -424px;
-    width: 62px;
-    height: 62px; }
-  div.igtv p:nth-child(2) {
-    font-size: 30px;
-    font-family: 'nsL';
-    margin-top: 24px; }
-  div.igtv p:nth-child(3) {
-    font-size: 14px;
-    margin-top: 12px; }
-  div.igtv button {
-    width: 94px;
-    height: 30px;
-    color: #ffffff;
-    background-color: #2e9afe;
-    border-radius: 4px;
-    margin-top: 20px; }
-
-div.saved {
-  display: none;
-  width: 356px;
-  height: 202px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 60px 294px 44px 294px; }
-  div.saved div#save {
-    background-image: url("../img/icon.png");
-    background-position: -192px -269px;
-    width: 62px;
-    height: 62px; }
-  div.saved span {
-    font-size: 30px;
-    font-family: 'nsL';
-    margin-top: 14px;
-    margin-bottom: 12px; }
-  div.saved p {
-    font-size: 14px; }
-
-div.tagged {
-  display: none;
-  width: 356px;
-  height: 184px;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 60px 44px 60px 44px; }
-  div.tagged div#tag {
-    background-image: url("../img/icon.png");
-    background-position: -256px -269px;
-    width: 62px;
-    height: 62px; }
-  div.tagged span {
-    font-size: 30px;
-    font-family: 'nsL';
-    margin-top: 14px;
-    margin-bottom: 12px; }
-  div.tagged p {
-    font-size: 14px; }
-
-div.footer {
-  display: flex;
-  position: fixed;
-  width: 100%;
-  bottom: 0px;
-  background-color: #fafafa;
-  flex-direction: column;
-  align-items: center; }
-  div.footer div.wrapper {
-    width: 1012px;
-    height: 25px;
-    padding: 38px 0px; }
-    div.footer div.wrapper div {
-      display: flex;
-      font-size: 12px;
-      font-family: 'nsM';
-      color: #00376b;
-      margin-right: 16px;
-      margin-bottom: 3px; }
-      div.footer div.wrapper div span {
-        display: inline-block;
-        margin-bottom: 7px;
-        margin-right: 16px;
+      padding-top: 10px;
+      grid-template-columns: repeat(3, 1fr);
+      /* 1fr 1fr 1fr */
+      grid-gap: 28px; }
+      div.content div.container div.posts div.image-container {
+        position: relative;
+        width: 293px;
+        height: 293px;
         cursor: pointer; }
-      div.footer div.wrapper div p.copyright {
-        right: 0;
+        div.content div.container div.posts div.image-container div.numbers {
+          display: none;
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          background-color: rgba(0, 0, 0, 0.3);
+          align-items: center;
+          justify-content: center;
+          z-index: 1; }
+          div.content div.container div.posts div.image-container div.numbers div.wrapper {
+            display: flex;
+            align-items: center; }
+            div.content div.container div.posts div.image-container div.numbers div.wrapper div.likes-icon {
+              background-image: url("../img/icon.png");
+              background-position: -339px -332px;
+              width: 20px;
+              height: 20px;
+              margin-right: 8px; }
+            div.content div.container div.posts div.image-container div.numbers div.wrapper div.comments-icon {
+              background-image: url("../img/icon.png");
+              background-position: -381px -332px;
+              width: 20px;
+              height: 20px;
+              margin-right: 8px; }
+            div.content div.container div.posts div.image-container div.numbers div.wrapper span {
+              font-size: 16px;
+              font-family: 'nsL';
+              color: #ffffff; }
+            div.content div.container div.posts div.image-container div.numbers div.wrapper:nth-child(1) {
+              margin-right: 24px; }
+        div.content div.container div.posts div.image-container img.post {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0px;
+          left: 0px;
+          object-fit: fill; }
+    div.content div.container div.igtv {
+      display: none;
+      width: 266px;
+      height: 220px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 60px 294px 44px 294px;
+      padding-right: 44px;
+      padding-left: 44px; }
+      div.content div.container div.igtv div#igtv {
+        background-image: url("../img/icon3.png");
+        background-position: -50px -424px;
+        width: 62px;
+        height: 62px; }
+      div.content div.container div.igtv p:nth-child(2) {
+        font-size: 30px;
+        font-family: 'nsL';
+        margin-top: 24px; }
+      div.content div.container div.igtv p:nth-child(3) {
+        font-size: 14px;
+        margin-top: 12px; }
+      div.content div.container div.igtv button {
+        width: 94px;
+        height: 30px;
+        color: #ffffff;
+        background-color: #2e9afe;
+        border-radius: 4px;
+        margin-top: 20px;
+        outline: none;
+        cursor: pointer; }
+    div.content div.container div.saved {
+      display: none;
+      width: 356px;
+      height: 202px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 60px 294px 44px 294px; }
+      div.content div.container div.saved div#save {
+        background-image: url("../img/icon.png");
+        background-position: -192px -269px;
+        width: 62px;
+        height: 62px; }
+      div.content div.container div.saved span {
+        font-size: 30px;
+        font-family: 'nsL';
+        margin-top: 14px;
+        margin-bottom: 12px; }
+      div.content div.container div.saved p {
+        font-size: 14px; }
+    div.content div.container div.tagged {
+      display: none;
+      width: 356px;
+      height: 184px;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      margin: 60px 44px 60px 44px; }
+      div.content div.container div.tagged div#tag {
+        background-image: url("../img/icon.png");
+        background-position: -256px -269px;
+        width: 62px;
+        height: 62px; }
+      div.content div.container div.tagged span {
+        font-size: 30px;
+        font-family: 'nsL';
+        margin-top: 14px;
+        margin-bottom: 12px; }
+      div.content div.container div.tagged p {
+        font-size: 14px; }
+  div.content div.footer {
+    display: flex;
+    width: 100%;
+    height: 101px;
+    background-color: #fafafa;
+    flex-direction: column;
+    align-items: center; }
+    div.content div.footer div.wrapper {
+      width: 1012px;
+      height: 25px;
+      padding: 38px 0px; }
+      div.content div.footer div.wrapper div {
+        display: flex;
         font-size: 12px;
-        color: #8e8e8e; }
+        font-family: 'nsM';
+        color: #00376b;
+        margin-right: 16px;
+        margin-bottom: 3px; }
+        div.content div.footer div.wrapper div span {
+          display: inline-block;
+          margin-bottom: 7px;
+          margin-right: 16px;
+          cursor: pointer; }
+        div.content div.footer div.wrapper div p.copyright {
+          right: 0;
+          font-size: 12px;
+          color: #8e8e8e; }
 
 div.setting {
   display: none;
   position: fixed;
   width: 100%;
   height: 100%;
+  top: 0px;
+  left: 0px;
   background-color: rgba(0, 0, 0, 0.65);
   align-items: center;
   justify-content: center;

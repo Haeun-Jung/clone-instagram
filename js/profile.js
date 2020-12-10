@@ -1,208 +1,68 @@
 // 이 페이지가 열렸을 때
 window.onload = function () {
-    showImage();
-    const contents = document.querySelector('div.content');
-    // scroll event
-    // contents.onscroll = function (e) {}
-    contents.addEventListener('scroll', function (e) {
-        if (contents.scrollHeight === contents.scrollTop + contents.clientHeight) {
-            console.log('bottom hit!!!');
-            showImage();
-        }
-    });
+    includeModal();
+    getMyImages();
 };
 
-// 게시글을 보여주기 위한 배열
-const example = [
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku0.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku1.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku2.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku3.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku4.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku5.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku6.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku7.jpg',
-        },
-    },
-    {
-        likes: 500,
-        comments: 23,
-        image: {
-            url: 'ppukku8.jpg',
-        },
-    },
-];
+function getMyImages() {
+    // GET /api/post/mine
+    // query params { }
+    const xhr = new XMLHttpRequest();
+    xhr.addEventListener('readystatechange', function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            console.log('getting my images is DONE!!!');
+            const res = JSON.parse(xhr.response);
+            console.log(res);
+            if (xhr.status >= 200 && xhr.status < 300) {
+                // no error (200~299)
+                showMyImage(res.results);
+                // 마지막 post id값 넘겨주기
+                maximumId = res.total;
+            } else {
+                // yes error (400~599)
+                alert(`${xhr.status} 오류가 발생했습니다. 관리자에게 문의해주세요.`);
+            }
+        }
+    });
+    // query로 보낼 때는 ? 형태로 주소에 추가
+    // path로 보낼 때는 / 붙인 후 주소에 추가
+    xhr.open('GET', `${BASE_URL}/api/post/mine`);
+    // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기
+    xhr.send();
+}
 
-// 게시글들 보여주기
-function showImage() {
-    console.log('showImage() invoked.');
-
+// 나의 게시물 보여주기
+function showMyImage(res) {
     const wrapper = document.querySelector('div.posts');
-    console.log(wrapper);
-
-    /*
-    원래의 경우 API 통신을 해서 JSON을 받아오고,
-    JSON을 통해 이미지를 띄움.
-    */
-
-    // const: 변하지 않는 상수 선언
-    // let: 변할 수 있는 변수 선언
-    let contents = '';
-    for (let i = 0; i < example.length; i++) {
-        // contents += '<image src="toeicSpeaking.jpg" />';
-        const likes = example[i].likes;
-        const comments = example[i].comments;
-        const url = example[i].image.url;
-        contents += `<div class="image-container" onclick="goToPost(this)" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
-        contents += `<div class="numbers">`;
-        contents += `<div class="wrapper">`;
-        contents += `<img />`;
-        contents += `<span>${likes}</span>`;
-        contents += `</div>`; // end of wrapper
-        contents += `<div class="wrapper">`;
-        contents += `<img />`;
-        contents += `<span>${comments}</span>`;
-        contents += `</div>`; // end of wrapper
-        contents += `</div>`; // end of numbers
-        contents += `<img class="post" src="img/${url}" />`;
-        contents += `</div>`; // end of image-container
+    let html = '';
+    for (let i = 0; i < res.length; i++) {
+        const id = res[i].id;
+        const url = res[i].url.thumb;
+        const likes = res[i].number.likes;
+        const comments = res[i].number.comments;
+        html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
+        html += `<div class="numbers">`;
+        html += `<div class="wrapper">`;
+        html += `<div class="likes-icon"></div>`;
+        html += `<span>${likes}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `<div class="wrapper">`;
+        html += `<div class="comments-icon"></div>`;
+        html += `<span>${comments}</span>`;
+        html += `</div>`; // end of wrapper
+        html += `</div>`; // end of numbers
+        html += `<img class="post" src="${BASE_URL}${url}" />`;
+        html += `</div>`; // end of image-container
     }
-    wrapper.innerHTML += contents;
-    // wrapper.innerHTML += contents;
+    wrapper.innerHTML += html;
 }
-
-function searchCancel() {
-    document.querySelector('input.search').value = '';
-}
-
-function searchFocus() {
-    document.querySelector('div.search-icon').style.left = '10px';
-    document.querySelector('div.search-cancel').style.display = 'flex';
-}
-
-function searchFocusOut() {
-    const search = document.querySelector('input.search');
-    const a = 40 - search.value.length;
-    console.log(a);
-    document.querySelector('div.search-icon').style.left = a + 'px';
-    document.querySelector('div.search-cancel').style.display = 'none';
-    search.style.textAlign = 'center';
-    search.style.textSize = '8px';
-    search.style.color = '#d4d4d4';
-    search.style.marginLeft = '3px';
-}
-
-// 사진 눌렀을 때 포스트 보이기
-function goToPost(target) {
-    const url = target.querySelector('img.post').getAttribute('src');
-    console.log(url);
-    document.querySelector('img#post-main').setAttribute('src', url);
-    document.querySelector('div.modal-post').style.display = 'flex';
-}
-
-// 마우스 hover했을 때 좋아요랑 댓글 보이기
-function showLikeComment(target) {
-    target.querySelector('div.numbers').style.display = 'flex';
-}
-
-// 마우스 out했을 때 좋아요랑 댓글 숨기기
-function hideLikeComment(target) {
-    target.querySelector('div.numbers').style.display = 'none';
-}
-
-// 포스트 부분에서 다른부분을 눌렀을 시에 포스트 화면 가리기
-document.querySelector('div.modal-post').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.modal-post').style.display = 'none';
-});
-
-// 스토리 보기
-function goToStory() {
-    document.querySelector('div.modal-story').style.display = 'flex';
-}
-
-// 스토리에서 X부분 눌러야 나가짐
-document.querySelector('span.story-close').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.modal-story').style.display = 'none';
-    document.querySelector('div.hashtag>img').style.borderColor = '#e8e8e8';
-});
-
-// 스토리에 신고버튼
-function storyReport() {
-    document.querySelector('div.story-report').style.display = 'flex';
-}
-
-// 스토리에 신고버튼 부분에서 다른부분을 눌렀을 시에 화면 가리기
-document.querySelector('div.story-report').addEventListener('click', function (e) {
-    if (e.target !== this) {
-        return; // 현재 함수 빠져나가기
-    }
-    console.log(e.target);
-    document.querySelector('div.story-report').style.display = 'none';
-});
 
 // 프로필 setting
-function setting() {
+document.querySelector('div.preference').addEventListener('click', function (e) {
     document.querySelector('div.setting').style.display = 'flex';
-}
-
-// 프로필 setting 함수
-function cancel() {
-    document.querySelector('div.setting').style.display = 'none';
-}
+});
 
 // 프로필 setting 부분에서 다른부분을 눌렀을 시에 setting 화면 가리기
 document.querySelector('div.setting').addEventListener('click', function (e) {
@@ -227,89 +87,67 @@ document.querySelector('div.profile-edit').addEventListener('click', function (e
     }
 });
 
-// 태그 버튼에 따라 화면 바꾸기
-const btnPosts = document.querySelector('div.btn-posts');
-const btnIgtv = document.querySelector('div.btn-igtv');
-const btnSaved = document.querySelector('div.btn-saved');
-const btnTagged = document.querySelector('div.btn-tagged');
-const divPosts = document.querySelector('div.posts');
-const divIgtv = document.querySelector('div.igtv');
-const divSaved = document.querySelector('div.saved');
-const divTagged = document.querySelector('div.tagged');
-
-// posts
-btnPosts.addEventListener('click', function (e) {
-    btnPosts.classList.add('active');
-    btnIgtv.classList.remove('active');
-    btnSaved.classList.remove('active');
-    btnTagged.classList.remove('active');
-    divPosts.style.display = 'grid';
-    divIgtv.style.display = 'none';
-    divSaved.style.display = 'none';
-    divTagged.style.display = 'none';
-});
-
-// IGTV
-btnIgtv.addEventListener('click', function (e) {
-    btnPosts.classList.remove('active');
-    btnIgtv.classList.add('active');
-    btnSaved.classList.remove('active');
-    btnTagged.classList.remove('active');
-    divPosts.style.display = 'none';
-    divIgtv.style.display = 'flex';
-    divSaved.style.display = 'none';
-    divTagged.style.display = 'none';
-});
-
-// saved
-btnSaved.addEventListener('click', function (e) {
-    btnPosts.classList.remove('active');
-    btnIgtv.classList.remove('active');
-    btnSaved.classList.add('active');
-    btnTagged.classList.remove('active');
-    divPosts.style.display = 'none';
-    divIgtv.style.display = 'none';
-    divSaved.style.display = 'flex';
-    divTagged.style.display = 'none';
-});
-
-// tagged
-btnTagged.addEventListener('click', function (e) {
-    btnPosts.classList.remove('active');
-    btnIgtv.classList.remove('active');
-    btnSaved.classList.remove('active');
-    btnTagged.classList.add('active');
-    divPosts.style.display = 'none';
-    divIgtv.style.display = 'none';
-    divSaved.style.display = 'none';
-    divTagged.style.display = 'flex';
-});
-
-function heart() {
-    document.querySelector('a.white-heart').style.display = 'none';
-    document.querySelector('a.black-heart').style.display = 'flex';
-    document.querySelector('div.profile').style.borderColor = 'transparent';
+function handleBtnPostsClick() {
+    document.getElementById('btn-posts').classList.add('active');
+    document.getElementById('btn-igtv').classList.remove('active');
+    document.getElementById('btn-saved').classList.remove('active');
+    document.getElementById('btn-tagged').classList.remove('active');
+    document.querySelector('div.posts').style.display = 'grid';
+    document.querySelector('div.igtv').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'none';
 }
 
-function unHeart() {
-    document.querySelector('a.black-heart').style.display = 'none';
-    document.querySelector('a.white-heart').style.display = 'flex';
-    document.querySelector('div.profile').style.borderColor = 'rgba(var(--i1d, 38, 38, 38), 1)';
+function handleBtnIgtvClick() {
+    document.getElementById('btn-posts').classList.remove('active');
+    document.getElementById('btn-igtv').classList.add('active');
+    document.getElementById('btn-saved').classList.remove('active');
+    document.getElementById('btn-tagged').classList.remove('active');
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.igtv').style.display = 'flex';
+    document.querySelector('div.saved').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'none';
+}
+
+function handleBtnSavedClick() {
+    document.getElementById('btn-posts').classList.remove('active');
+    document.getElementById('btn-igtv').classList.remove('active');
+    document.getElementById('btn-saved').classList.add('active');
+    document.getElementById('btn-tagged').classList.remove('active');
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.igtv').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'flex';
+    document.querySelector('div.tagged').style.display = 'none';
+}
+
+function handleBtnTaggedClick() {
+    document.getElementById('btn-posts').classList.remove('active');
+    document.getElementById('btn-igtv').classList.remove('active');
+    document.getElementById('btn-saved').classList.remove('active');
+    document.getElementById('btn-tagged').classList.add('active');
+    document.querySelector('div.posts').style.display = 'none';
+    document.querySelector('div.igtv').style.display = 'none';
+    document.querySelector('div.saved').style.display = 'none';
+    document.querySelector('div.tagged').style.display = 'flex';
 }
 
 // 하트 누르면 활동창 뜨게하기
 document.querySelector('a.white-heart').addEventListener('click', function (e) {
-    const popup = document.querySelector('div.post-activity');
-    popup.style.display = popup.style.display === 'none' ? 'flex' : 'none';
+    const xPos = e.target.getBoundingClientRect().x - 426;
+    document.querySelector('a.white-heart').style.display = 'none';
+    document.querySelector('a.black-heart').style.display = 'flex';
+    document.querySelector('div.profile').style.borderColor = 'transparent';
+    document.querySelector('div.post-activity').style.left = xPos + 'px';
+    document.querySelector('div.post-activity').style.display = 'flex';
 });
 
 // 활동창 팝업에서 다른부분을 눌렀을 시에 팝업 가리기
 document.querySelector('div.post-activity').addEventListener('click', function (e) {
     const bg = this.querySelector('div.bg');
     if (e.target === bg) {
-        this.style.display = 'none';
         document.querySelector('a.black-heart').style.display = 'none';
         document.querySelector('a.white-heart').style.display = 'flex';
         document.querySelector('div.profile').style.borderColor = 'rgba(var(--i1d, 38, 38, 38), 1)';
+        this.style.display = 'none';
     }
 });
