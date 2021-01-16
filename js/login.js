@@ -1,4 +1,4 @@
-const BASE_URL = 'http://sjud325.iptime.org:11080';
+const BASE_URL = 'https://sjud325.asuscomm.com/api';
 
 // input값이 있을 때 버튼색 바꾸기
 function loginId() {
@@ -30,19 +30,19 @@ function login() {
     // body params { id: String, pw: String }
     const json = {
         id: document.querySelector('input#id').value,
-        pw: document.querySelector('input#password').value
+        pw: document.querySelector('input#password').value,
     };
     const xhr = new XMLHttpRequest();
     xhr.addEventListener('readystatechange', function () {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status >= 200 && xhr.status < 300) {
-                location.href = '/profile.html';
+                location.href = 'profile.html';
             } else {
-                alert("잘못된 이메일 또는 비밀번호입니다.");
+                alert('잘못된 이메일 또는 비밀번호입니다.');
             }
         }
     });
-    xhr.open('POST', `${BASE_URL}/api/user/sign-in`);
+    xhr.open('POST', `${BASE_URL}/user/sign-in`);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify(json));
 }

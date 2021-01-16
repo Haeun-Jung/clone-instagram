@@ -1,4 +1,4 @@
-const BASE_URL = 'http://sjud325.iptime.org:11080';
+const BASE_URL = 'https://sjud325.asuscomm.com/api';
 
 function includeModal(callback) {
     const xhr = new XMLHttpRequest(); // API 통신하기 위한 객체 생성
@@ -98,7 +98,7 @@ function includeModal(callback) {
             });
         }
     });
-    xhr.open('GET', '/modal.txt');
+    xhr.open('GET', 'modal.txt');
     xhr.send();
 }
 
@@ -116,15 +116,25 @@ function goToPost(target, id) {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const res = JSON.parse(xhr.response);
+                // div.top 자식의 div.posting 자식의 div태그 값을 tags변수에 저장
                 const tags = document.querySelector('div.top > div.posting > div');
+                // tags값 비우기
                 tags.innerHTML = '';
+                // p태그 요소 만들어서 변수 p에 저장
                 const p = document.createElement('p');
+                // p태그에 comment 클래스 추가
                 p.classList.add('comment');
+                // a태그 요소 만들어서 변수 a에 저장
                 const a = document.createElement('a');
+                // a태그에 id 클래스 추가
                 a.classList.add('id');
+                // a 내용으로 res변수의 user 값 저장
                 a.innerText = res.user;
+                // p 자식 요소에 a 넣기
                 p.appendChild(a);
+                // p에 res변수의 content값 추가
                 p.innerHTML += res.content;
+                // tags 자식 요소에 p 넣기
                 tags.appendChild(p);
 
                 for (let i = 0; i < res.tags.length; i++) {
@@ -186,7 +196,7 @@ function goToPost(target, id) {
             }
         }
     });
-    xhr.open('GET', `${BASE_URL}/api/post/${id}`);
+    xhr.open('GET', `${BASE_URL}/post/${id}`);
     // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
     xhr.setRequestHeader('Content-Type', 'application/json');
     // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기
@@ -222,7 +232,7 @@ function getRecentImages() {
     });
     // query로 보낼 때는 ? 형태로 주소에 추가
     // path로 보낼 때는 / 붙인 후 주소에 추가
-    xhr.open('GET', `${BASE_URL}/api/post/recent?page=${page}`);
+    xhr.open('GET', `${BASE_URL}/post/recent?page=${page}`);
     // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
     xhr.setRequestHeader('Content-Type', 'application/json');
     // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기
@@ -316,7 +326,7 @@ function dblClickLike() {
             }
         }
     });
-    xhr.open('POST', `${BASE_URL}/api/post/like`);
+    xhr.open('POST', `${BASE_URL}/post/like`);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.send(JSON.stringify({ id: 0 }));
 }

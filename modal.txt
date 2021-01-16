@@ -12,7 +12,7 @@
         <div class="post-content">
             <div class="user">
                 <img src="img/ppukku4.jpg" />
-                <a onclick="location.href='/profile.html'">ppukku_world</a>
+                <a onclick="location.href='profile.html'">ppukku_world</a>
                 <span>ㆍ</span>
                 <button class="follow">팔로우</button>
                 <div class="blank"></div>
@@ -25,7 +25,7 @@
                         <div class="posting">
                             <div>
                                 <p class="comment">
-                                    <a class="id" onclick="location.href='/profile.html'">ppukku_world</a>
+                                    <a class="id" onclick="location.href='profile.html'">ppukku_world</a>
                                 </p>
                             </div>
                             <p class="time"></p>

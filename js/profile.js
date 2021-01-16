@@ -26,7 +26,7 @@ function getMyImages() {
     });
     // query로 보낼 때는 ? 형태로 주소에 추가
     // path로 보낼 때는 / 붙인 후 주소에 추가
-    xhr.open('GET', `${BASE_URL}/api/post/mine`);
+    xhr.open('GET', `${BASE_URL}/post/mine`);
     // 서버로 보내는 데이터의 형태가 json 형태라고 알려줌
     xhr.setRequestHeader('Content-Type', 'application/json');
     // body로 담아 보낼 때는 send() 안에 JSON을 문자열로 변환하여 넣기

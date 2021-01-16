@@ -1,56 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="shortcut icon" type="image⁄x-icon" href="../img/instagram-favicon.ico" />
-        <title>#강아지 해시태그ㆍInstagram 사진 및 동영상</title>
-        <link rel="stylesheet" href="css/index.css" />
-        <link rel="stylesheet" href="css/modal.css" />
-        <script defer src="js/util.js"></script>
-        <script defer src="js/index.js"></script>
-    </head>
-    <body>
-        <div class="header">
-            <div class="wrapper">
-                <div class="logo" onclick="location.reload();"></div>
-                <div class="blank"></div>
-                <div class="search-frame">
-                    <input
-                        type="text"
-                        class="search"
-                        placeholder="검색"
-                        onfocus="searchFocus()"
-                        onfocusout="searchFocusOut()"
-                    />
-                    <div class="search-icon"></div>
-                    <div class="search-cancel" onmousedown="searchCancel()"></div>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" type="image⁄x-icon" href="img/instagram-favicon.ico" />
+    <title>#강아지 해시태그ㆍInstagram 사진 및 동영상</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="css/modal.css" />
+    <script defer src="js/util.js"></script>
+    <script defer src="js/index.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <div class="wrapper">
+            <div class="logo" onclick="location.reload();"></div>
+            <div class="blank"></div>
+            <div class="search-frame">
+                <input type="text" class="search" placeholder="검색" onfocus="searchFocus()"
+                    onfocusout="searchFocusOut()" />
+                <div class="search-icon"></div>
+                <div class="search-cancel" onmousedown="searchCancel()"></div>
+            </div>
+            <div class="blank"></div>
+            <button class="login" onclick="location.href='login.html'">로그인</button>
+            <button class="join" onclick="location.href='join.html'">가입하기</button>
+        </div>
+    </div>
+    <div class="header-line"></div>
+    <div class="content">
+        <div class="hashtag">
+            <img id="main-image" src="img/ppukku9.jpg" onclick="goToStory()" />
+            <div class="result">
+                <div class="keyword">
+                    <span>#</span>
+                    <span>강아지</span>
                 </div>
-                <div class="blank"></div>
-                <button class="login" onclick="location.href='/login.html'">로그인</button>
-                <button class="join" onclick="location.href='/join.html'">가입하기</button>
+                <div class="count">
+                    <span>게시물</span>
+                    <span>18,535,243</span>
+                </div>
+                <button class="follow" onclick="follow()">팔로우</button>
             </div>
         </div>
-        <div class="header-line"></div>
-        <div class="content">
-            <div class="hashtag">
-                <img id="main-image" src="img/ppukku9.jpg" onclick="goToStory()" />
-                <div class="result">
-                    <div class="keyword">
-                        <span>#</span>
-                        <span>강아지</span>
-                    </div>
-                    <div class="count">
-                        <span>게시물</span>
-                        <span>18,535,243</span>
-                    </div>
-                    <button class="follow" onclick="follow()">팔로우</button>
-                </div>
-            </div>
-            <p class="title">인기 게시물</p>
-            <div id="popular" class="posts"></div>
-            <p class="title recent">최근 사진</p>
-            <div id="recent" class="posts"></div>
-        </div>
-        <!-- modal -->
-    </body>
+        <p class="title">인기 게시물</p>
+        <div id="popular" class="posts"></div>
+        <p class="title recent">최근 사진</p>
+        <div id="recent" class="posts"></div>
+    </div>
+    <!-- modal -->
+</body>
+
 </html>
