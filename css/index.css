@@ -115,6 +115,7 @@ div.header-line {
 div.content {
   display: flex;
   width: 100%;
+  height: calc(100% - 54px);
   flex: 1;
   background-color: #fafafa;
   align-items: center;

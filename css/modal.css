@@ -223,6 +223,7 @@ div.modal-post {
             div.modal-post div.wrapper div.post-content div.rest div.buttons button.save svg.save-yes {
               display: none; }
         div.modal-post div.wrapper div.post-content div.rest button.likes-count {
+          height: 20px;
           background-color: transparent;
           font-family: 'nsM';
           text-align: start;
