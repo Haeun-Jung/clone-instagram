@@ -91,11 +91,11 @@ function showPopularImage(res) {
         const comments = res[i].number.comments;
         html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
         html += `<div class="numbers">`;
-        html += `<div class="wrapper">`;
+        html += `<div class="icon-wrapper">`;
         html += `<div class="likes-icon"></div>`;
         html += `<span>${likes}</span>`;
         html += `</div>`; // end of wrapper
-        html += `<div class="wrapper">`;
+        html += `<div class="icon-wrapper">`;
         html += `<div class="comments-icon"></div>`;
         html += `<span>${comments}</span>`;
         html += `</div>`; // end of wrapper
@@ -118,11 +118,11 @@ function showRecentImage(res) {
         const comments = res.results[i].number.comments;
         html += `<div class="image-container" onclick="goToPost(this, ${id})" onmouseover="showLikeComment(this)" onmouseout="hideLikeComment(this)">`;
         html += `<div class="numbers">`;
-        html += `<div class="wrapper">`;
+        html += `<div class="icon-wrapper">`;
         html += `<div class="likes-icon"></div>`;
         html += `<span>${likes}</span>`;
         html += `</div>`; // end of wrapper
-        html += `<div class="wrapper">`;
+        html += `<div class="icon-wrapper">`;
         html += `<div class="comments-icon"></div>`;
         html += `<span>${comments}</span>`;
         html += `</div>`; // end of wrapper

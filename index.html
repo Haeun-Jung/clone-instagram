@@ -29,24 +29,26 @@
     </div>
     <div class="header-line"></div>
     <div class="content">
-        <div class="hashtag">
-            <img id="main-image" src="img/ppukku9.jpg" onclick="goToStory()" />
-            <div class="result">
-                <div class="keyword">
-                    <span>#</span>
-                    <span>강아지</span>
+        <div class="wrapper">
+            <div class="hashtag">
+                <img id="main-image" src="img/ppukku9.jpg" onclick="goToStory()" />
+                <div class="result">
+                    <div class="keyword">
+                        <span>#</span>
+                        <span>강아지</span>
+                    </div>
+                    <div class="count">
+                        <span>게시물</span>
+                        <span>18,535,243</span>
+                    </div>
+                    <button class="follow" onclick="follow()">팔로우</button>
                 </div>
-                <div class="count">
-                    <span>게시물</span>
-                    <span>18,535,243</span>
-                </div>
-                <button class="follow" onclick="follow()">팔로우</button>
             </div>
+            <p class="title">인기 게시물</p>
+            <div id="popular" class="posts"></div>
+            <p class="title recent">최근 사진</p>
+            <div id="recent" class="posts"></div>
         </div>
-        <p class="title">인기 게시물</p>
-        <div id="popular" class="posts"></div>
-        <p class="title recent">최근 사진</p>
-        <div id="recent" class="posts"></div>
     </div>
     <!-- modal -->
 </body>
